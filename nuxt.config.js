@@ -1,4 +1,5 @@
-import pkg from './package'
+import pkg from './package';
+const PrismicConfig = require('./prismic.config');
 
 export default {
   mode: 'universal',
@@ -15,7 +16,12 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    script: [
+      { innerHTML: '{ window.prismic = { endpoint: "' + PrismicConfig.apiEndpoint + '"} }' },
+      { src: '//static.cdn.prismic.io/prismic.min.js' }
+    ],
+    __dangerouslyDisableSanitizers: ['script'],
   },
 
   /*
@@ -33,6 +39,9 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/link-resolver.js',
+    '~/plugins/html-serializer.js',
+    '~/plugins/prismic-vue.js',
   ],
 
   /*
@@ -58,6 +67,7 @@ export default {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
+      config.resolve.alias['vue'] = 'vue/dist/vue.common'
     }
   }
 }
