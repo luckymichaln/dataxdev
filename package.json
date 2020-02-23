@@ -15,7 +15,9 @@
     "@nuxtjs/pwa": "^2.6.0",
     "cross-env": "^5.2.0",
     "nuxt": "^2.4.0",
-    "prismic-vue": "https://github.com/prismicio/prismic-vue.git#nuxt"
+    "prismic-javascript": "^2.1.5",
+    "prismic-vue": "https://github.com/prismicio/prismic-vue.git#nuxt",
+    "vuex": "^3.1.2"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
