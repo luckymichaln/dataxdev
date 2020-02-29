@@ -6,15 +6,16 @@ const state = () => ({
     career: null,
     about_us: null,
     projects_page: null,
+    service_page: null,
   }
 })
 
 const actions = {
-  async GET_SINGLE_PAGE_DATA({ commit }, { pageType }) {
+  async GET_SINGLE_PAGE_DATA({ commit }, { pageType, uid }) {
     try {
       const api = await apiConfig()
       let doc = {}
-      const result = await api.getSingle(`${pageType}`)
+      const result = uid ? await api.getByUID(`${pageType}`, `${uid}`) : await api.getSingle(`${pageType}`)
       doc = result.data
 
       if (doc) {
@@ -31,9 +32,7 @@ const actions = {
 
 const mutations = {
   SET_SINGLE_PAGE_DATA(state, { data, pageType }) {
-    if (!state.pageData[`${pageType}`]) {
-      state.pageData[`${pageType}`] = data
-    }
+    state.pageData[`${pageType}`] = data
   }
 }
 
@@ -42,6 +41,7 @@ const getters = {
   careerPageData: state => state.pageData.career ? state.pageData.career : null,
   projectsPageData: state => state.pageData.projects_page ? state.pageData.projects_page : null,
   aboutPageData: state => state.pageData.about_us ? state.pageData.about_us : null,
+  servicesPageData: state => state.pageData.service_page ? state.pageData.service_page : null,
 }
 
 export default {

@@ -5,6 +5,10 @@
     <nuxt-link :to="{ name: 'career' }">Career</nuxt-link>
     <nuxt-link :to="{ name: 'about-us' }">About us</nuxt-link>
     <nuxt-link :to="{ name: 'projects' }">Projects</nuxt-link>
+    <nuxt-link :to="{ name: `services-:slug`, params: { slug: 'ios' } }">iOS</nuxt-link>
+    <nuxt-link :to="{ name: `services-:slug`, params: { slug: 'java' } }">Java</nuxt-link>
+    <nuxt-link :to="{ name: `services-:slug`, params: { slug: 'dotnet' } }">.NET</nuxt-link>
+    <nuxt-link :to="{ name: `services-:slug`, params: { slug: 'android' } }">Android</nuxt-link>
     ---------------------<br />
   </header>
 </template>
