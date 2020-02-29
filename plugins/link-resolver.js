@@ -1,5 +1,4 @@
 export default function (doc) {
-  console.log(doc, 'doc')
   if (doc.isBroken) {
     return '/not-found';
   }
