@@ -1,6 +1,7 @@
 <template>
   <header class="page-header">
-    {{ headerData }}
+    {{ headerData }}<br />
+    ---------------------<br />
   </header>
 </template>
 

@@ -2,6 +2,7 @@
   <div>
     <pageHeader :headerData="headerData" />
     <nuxt />
+    <pageFooter :footerData="footerData" />
   </div>
 </template>
 
@@ -10,14 +11,17 @@ import { mapState } from 'vuex';
 import Prismic from "prismic-javascript";
 import PrismicConfig from "~/prismic.config.js";
 import pageHeader from '../components/header/page-header';
+import pageFooter from '../components/footer/page-footer';
 
 export default {
   computed: {
-    ...mapState('nav', ['headerData'])
+    ...mapState('header', ['headerData']),
+    ...mapState('footer', ['footerData']),
   },
 
   components: {
-    pageHeader
+    pageHeader,
+    pageFooter
   }
 }
 </script>
