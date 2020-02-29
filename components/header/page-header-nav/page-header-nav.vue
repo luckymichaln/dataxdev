@@ -23,7 +23,7 @@
               v-for="e in navEl.items"
               :key="e.menu_link_url.id"
               :field="e.menu_link_url"
-              class="nav-el__link"
+              :class="submenuLinkClass(e)"
             >
               {{ e.menu_link_label }}
             </prismic-link>
@@ -43,11 +43,31 @@ export default {
     }
   },
 
+  mounted() {
+    console.log(this.navList)
+  },
+
   computed: {
     submenuSpanClass() {
       return {
         'link-text': true,
         'nuxt-link-active': this.$route.name === 'services-:slug'
+      }
+    }
+  },
+
+  methods: {
+    submenuLinkClass(el) {
+      return {
+        'nav-el__link': true,
+        'link--java': el.tech_type.toLowerCase() === 'java',
+        'link--net': el.tech_type.toLowerCase() === '.net',
+        'link--ios': el.tech_type.toLowerCase() === 'ios',
+        'link--android': el.tech_type.toLowerCase() === 'android',
+        'link--red': el.theme_colour.toLowerCase() === 'red',
+        'link--yellow': el.theme_colour.toLowerCase() === 'yellow',
+        'link--blue': el.theme_colour.toLowerCase() === 'blue',
+        'link--green': el.theme_colour.toLowerCase() === 'green',
       }
     }
   }
