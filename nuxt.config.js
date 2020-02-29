@@ -15,7 +15,8 @@ export default {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'href="https://fonts.googleapis.com/css?family=Lato:700,900|Roboto&display=swap' }
     ],
     script: [
       { innerHTML: '{ window.prismic = { endpoint: "' + PrismicConfig.apiEndpoint + '"} }' },
@@ -27,12 +28,13 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#F05252' },
 
   /*
   ** Global CSS
   */
   css: [
+    '~/assets/styles/main.scss',
   ],
 
   /*
