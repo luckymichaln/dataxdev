@@ -4,13 +4,15 @@ import Vuex from 'vuex';
 // Modules
 import header from './header';
 import footer from './footer';
+import pages from './pages';
 
 Vue.use(Vuex)
 
 const createStore = () => {
   const modules = {
     header,
-    footer
+    footer,
+    pages,
   }
 
   return new Vuex.Store({

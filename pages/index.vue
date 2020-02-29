@@ -1,32 +1,28 @@
 <template>
-  <section class="container">
-    <div>
-      {{ document }}
-      <nuxt-link :to="{ name: 'career' }">Career</nuxt-link>
-    </div>
-  </section>
+  <homePage :pageData="homePageData" />
 </template>
 
 <script>
-import Prismic from "prismic-javascript";
-import PrismicConfig from "~/prismic.config.js";
+import { mapGetters } from 'vuex';
+import homePage from '~/pages/home-page';
 
 export default {
-  async asyncData({context, error, req}) {
-    try {
-      const api = await Prismic.getApi(PrismicConfig.apiEndpoint, {accessToken: PrismicConfig.token, req})
-
-      let document = {}
-      const result = await api.getSingle('home_page')
-      document = result.data
-
-      return {
-        document,
-        documentId: result.id,
-      }
-    } catch (e) {
-      console.error({ e, statusCode: 404, message: 'Page not found' })
+  async fetch ({ store }) {
+    if (!store.getters['pages/homePageData']) {
+      await store.dispatch('pages/GET_SINGLE_PAGE_DATA', { pageType: 'home_page' })
     }
+  },
+
+  computed: {
+    ...mapGetters('pages', ['homePageData']),
+  },
+
+  mounted() {
+    console.log(this.homePageData, 'homePageData')
+  },
+
+  components: {
+    homePage
   }
 }
 </script>

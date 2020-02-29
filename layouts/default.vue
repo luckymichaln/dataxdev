@@ -1,7 +1,9 @@
 <template>
   <div>
     <pageHeader :headerData="headerData" />
-    <nuxt />
+    <transition name="fade">
+      <nuxt />
+    </transition>
     <pageFooter :footerData="footerData" />
   </div>
 </template>
