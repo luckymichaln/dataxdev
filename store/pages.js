@@ -25,7 +25,7 @@ const actions = {
       console.log({ GET_SINGLE_PAGE_DATA: doc, pageType })
       return doc
     } catch (err) {
-      console.error(err)
+      console.error({ err, pageType })
     }
   }
 }
