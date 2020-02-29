@@ -2,20 +2,20 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 // Modules
-import nav from './nav';
+import header from './header';
 
 Vue.use(Vuex)
 
 const createStore = () => {
   const modules = {
-    nav,
+    header,
   }
 
   return new Vuex.Store({
     modules,
     actions: {
       async nuxtServerInit({ dispatch }, { req }) {
-        await dispatch('nav/GET_NAV_DATA');
+        await dispatch('header/GET_NAV_DATA');
       }
     }
   })

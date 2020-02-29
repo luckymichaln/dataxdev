@@ -1,11 +1,11 @@
 import apiConfig from './api';
 
 const state = () => ({
-  navData: null
+  headerData: null
 })
 
 const actions = {
-  async GET_NAV_DATA({ commit }) {
+  async GET_HEADER_DATA({ commit }) {
     try {
       const api = await apiConfig()
       let doc = {}
@@ -13,10 +13,10 @@ const actions = {
       doc = result.data
 
       if (doc) {
-        commit('SET_NAV_DATA', { data: doc });
+        commit('SET_HEADER_DATA', { data: doc });
       }
 
-      console.log({ GET_NAV_DATA: doc })
+      console.log({ GET_HEADER_DATA: doc })
       return doc
     } catch (err) {
       console.error(err)
@@ -25,8 +25,8 @@ const actions = {
 }
 
 const mutations = {
-  SET_NAV_DATA(state, { data }) {
-    state.navData = data
+  SET_HEADER_DATA(state, { data }) {
+    state.headerData = data
   }
 }
 

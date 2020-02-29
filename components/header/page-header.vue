@@ -1,14 +1,13 @@
 <template>
-  <nav class="page-nav">
-    NAV
-    {{ navData }}
-  </nav>
+  <header class="page-header">
+    {{ headerData }}
+  </header>
 </template>
 
 <script>
 export default {
   props: {
-    navData: {
+    headerData: {
       type: Object,
       default: () => {},
     }
