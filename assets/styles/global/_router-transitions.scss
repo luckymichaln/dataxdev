@@ -1,0 +1,15 @@
+.global-slide-enter-active, .global-slide-leave-active {
+  position: relative;
+  transform: translateY(0);
+  transition: .2s;
+}
+
+.global-slide-enter {
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+.global-slide-leave-to {
+  transform: translateY(-10px);
+  opacity: 0;
+}
