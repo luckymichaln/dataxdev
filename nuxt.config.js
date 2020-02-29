@@ -19,8 +19,8 @@ export default {
       { rel: 'stylesheet', href: 'href="https://fonts.googleapis.com/css?family=Lato:700,900|Roboto&display=swap' }
     ],
     script: [
-      { innerHTML: '{ window.prismic = { endpoint: "' + PrismicConfig.apiEndpoint + '"} }' },
-      { src: '//static.cdn.prismic.io/prismic.min.js' }
+      // { innerHTML: '{ window.prismic = { endpoint: "' + PrismicConfig.apiEndpoint + '"} }' },
+      // { src: '//static.cdn.prismic.io/prismic.min.js' }
     ],
     __dangerouslyDisableSanitizers: ['script'],
   },
@@ -37,14 +37,20 @@ export default {
     '~/assets/styles/main.scss',
   ],
 
+  prismic: {
+    endpoint: 'https://data-x.cdn.prismic.io/api/v2',
+    linkResolver: '@/plugins/link-resolver',
+    htmlSerializer: '@/plugins/html-serializer',
+  },
+
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-    '~/plugins/link-resolver.js',
-    '~/plugins/html-serializer.js',
-    '~/plugins/prismic-vue.js',
-  ],
+  // plugins: [
+  //   '~/plugins/link-resolver.js',
+  //   '~/plugins/html-serializer.js',
+  //   '~/plugins/prismic-vue.js',
+  // ],
 
   /*
   ** Nuxt.js modules
@@ -53,6 +59,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/prismic',
   ],
   /*
   ** Axios module configuration

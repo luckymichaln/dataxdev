@@ -12,12 +12,13 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/prismic": "^1.1.0",
     "@nuxtjs/pwa": "^2.6.0",
     "cross-env": "^5.2.0",
     "node-sass": "^4.13.1",
     "nuxt": "^2.4.0",
     "prismic-javascript": "^2.1.5",
-    "prismic-vue": "https://github.com/prismicio/prismic-vue.git#nuxt",
+    "prismic-vue": "^2.0.0",
     "sass-loader": "^8.0.2",
     "vuex": "^3.1.2"
   },

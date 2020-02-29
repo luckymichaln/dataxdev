@@ -1307,6 +1307,16 @@
   resolved "https://registry.yarnpkg.com/@nuxtjs/meta/-/meta-2.6.0.tgz#cc8fd2a019fb3e2e1feaa78abefee3a6a6aed477"
   integrity sha512-DrH+kmFEEKxjtZjRi2R0hfHDni+Ba2v4a47V5TwftLeshP31no9KKc1Ae6whLB+X+caC1tv3lR5CHbFmBgLC7Q==
 
+"@nuxtjs/prismic@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/prismic/-/prismic-1.1.0.tgz#dcd460ff32fc8758d52311d69aac699273e3d3d2"
+  integrity sha512-sLpVH2POnEEkzoY+8ZP6WRDHG7yRk4+jyQs8scilQjUR5R8hGVe3eEt2IuPZblCdkHC6b+M1m9TkRPID1EAPyw==
+  dependencies:
+    consola "^2.11.3"
+    prismic-dom "^2.1.0"
+    prismic-javascript "^2.1.5"
+    prismic-vue "^2.0.0"
+
 "@nuxtjs/proxy@^1.3.3":
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/@nuxtjs/proxy/-/proxy-1.3.3.tgz#3de3d9f073e8e57167168100940be2a824a220e0"
@@ -2850,7 +2860,7 @@ cross-env@^5.2.0:
   dependencies:
     cross-spawn "^6.0.5"
 
-cross-fetch@^2.2.0, cross-fetch@^2.2.3:
+cross-fetch@^2.2.3:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-2.2.3.tgz#e8a0b3c54598136e037f8650f8e823ccdfac198e"
   integrity sha512-PrWWNH3yL2NYIb/7WF/5vFG3DCQiXDOVf8k3ijatbrtnwNuhMWLC7YF7uqf53tbTFDzHIUD8oITw4Bxt8ST3Nw==
@@ -6979,14 +6989,6 @@ prismic-helpers@^1.0.0:
   resolved "https://registry.yarnpkg.com/prismic-helpers/-/prismic-helpers-1.0.0.tgz#8337420cf187f55fb7b7a8be755523c8696fc329"
   integrity sha1-gzdCDPGH9V+3t6i+dVUjyGlvwyk=
 
-prismic-javascript@^1.5.0:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/prismic-javascript/-/prismic-javascript-1.5.1.tgz#0f9da4e58a094ca0fb0b68e2e458e1a6c33a52ce"
-  integrity sha512-JAqbrjzE5nOXs0wy7GySMkiV91jk8j0jQS8c+OC2zsoi1UzG4CriETgXVEXGdmVPC1Iu7PVucWmVn5iGiFcF5A==
-  dependencies:
-    cross-fetch "^2.2.0"
-    promise-polyfill "8.0.0"
-
 prismic-javascript@^2.1.5:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/prismic-javascript/-/prismic-javascript-2.1.5.tgz#7170ce830c7176df442d91f11cda4db5a5679599"
@@ -7003,12 +7005,10 @@ prismic-richtext@^0.4.2:
     ramda "^0.25.0"
     uuid "^3.1.0"
 
-"prismic-vue@https://github.com/prismicio/prismic-vue.git#nuxt":
-  version "1.3.0"
-  resolved "https://github.com/prismicio/prismic-vue.git#931d48f5ab2c3a392231ed2f5309813b22a7e1be"
-  dependencies:
-    prismic-dom "^2.1.0"
-    prismic-javascript "^1.5.0"
+prismic-vue@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/prismic-vue/-/prismic-vue-2.0.0.tgz#e2c26d70402d3bcc172054017f1c23b208c0192d"
+  integrity sha512-dg9CrpDEPbSCflMjbBHkU4jqGllRUqqYynqKJ8Mk3AtHUULfjEK4nQ2mZYQrFBMLOheh9lAv0/CCP4uHN7G7xw==
 
 private@^0.1.6:
   version "0.1.8"
