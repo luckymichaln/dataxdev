@@ -43,10 +43,6 @@ export default {
     }
   },
 
-  mounted() {
-    console.log(this.navList)
-  },
-
   computed: {
     submenuSpanClass() {
       return {

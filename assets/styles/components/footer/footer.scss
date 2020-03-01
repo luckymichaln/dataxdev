@@ -1,0 +1,43 @@
+.page-footer {
+  &__row {
+    display: flex;
+    margin: 88px 0 84px;
+
+    .row-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: calc(100% / 3);
+      color: $color-text-footer;
+
+      .col-links a {
+        padding: 0 10px;
+
+        &:not(:first-child) {
+          position: relative;
+
+          &::before {
+            content: '.';
+            position: absolute;
+            top: 1px;
+            left: -5px;
+            font-size: 30px;
+            line-height: 0;
+          }
+        }
+      }
+
+      .col-copy {
+        margin-top: 16px;
+        font-size: 12px;
+        color: $color-text;
+      }
+
+      &:first-child {
+        position: relative;
+        top: -12px;
+        align-items: flex-start;
+      }
+    }
+  }
+}

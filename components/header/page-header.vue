@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import pageHeaderNav from './page-header-nav/page-header-nav';
+import pageHeaderNav from '~/components/header/page-header-nav';
 
 export default {
   props: {
