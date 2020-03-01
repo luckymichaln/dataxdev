@@ -61,7 +61,7 @@ export default {
       return {
         'nav-el__link': true,
         'link--java': el.tech_type.toLowerCase() === 'java',
-        'link--net': el.tech_type.toLowerCase() === '.net',
+        'link--dotnet': el.tech_type.toLowerCase() === '.net',
         'link--ios': el.tech_type.toLowerCase() === 'ios',
         'link--android': el.tech_type.toLowerCase() === 'android',
         'link--red': el.theme_colour.toLowerCase() === 'red',
