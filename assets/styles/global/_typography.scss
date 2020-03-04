@@ -16,3 +16,15 @@ h6 {
   font-family: $font-accent;
   color: $color-text-heading;
 }
+
+h1 {
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 83px;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 22px;
+  color: $color-text;
+}

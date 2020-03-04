@@ -16,7 +16,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'href="https://fonts.googleapis.com/css?family=Lato:700,900|Roboto&display=swap' }
+      { rel: 'stylesheet', href: 'href="https://fonts.googleapis.com/css?family=Lato:500,700,900|Roboto&display=swap' }
     ],
     script: [
       // { innerHTML: '{ window.prismic = { endpoint: "' + PrismicConfig.apiEndpoint + '"} }' },

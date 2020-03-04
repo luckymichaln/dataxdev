@@ -1,0 +1,51 @@
+.button-wrapper {
+  display: inline-flex;
+}
+
+.button {
+  border-radius: 12px;
+  padding: 15px 28px 14px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: $font-regular;
+  cursor: pointer;
+
+  &--red {
+    color: $color-red;
+  }
+
+  &--blue {
+
+  }
+
+  &--green {
+
+  }
+
+  &--yellow {
+
+  }
+
+  &--bordered {
+    border: 1px solid currentColor;
+
+    &.button--red {
+      background-color: $color-red--superlight2;
+    }
+  }
+
+  &--solid {
+    border: 1px solid rgba(255, 255, 255, .48);
+    background-color: $color-red;
+
+    &.button--red {
+      box-shadow: 0px 6px 16px rgba(240, 82, 82, 0.02), 0px 2px 8px rgba(240, 82, 82, 0.24);
+      color: $color-white;
+    }
+  }
+
+  &--clean {
+    border: 1px solid transparent;
+    background-color: transparent;
+  }
+}
