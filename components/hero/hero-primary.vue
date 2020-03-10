@@ -22,7 +22,8 @@
         <div class="hero__image">
           <img
             :src="imageUrl"
-            :alt="imageAlt" />
+            :alt="imageAlt"
+          />
         </div>
       </div>
     </div>

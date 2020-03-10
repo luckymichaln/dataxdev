@@ -9,6 +9,9 @@
 @import "./global/router-transitions";
 @import "./global/typography";
 
+// Pages
+@import "./pages/home-page";
+
 // Components
 @import "./components/header/header";
 @import "./components/header/submenu-box";
@@ -16,3 +19,8 @@
 @import "./components/footer/footer-columns";
 @import "./components/button";
 @import "./components/hero/hero-primary";
+@import "./components/sliders/tech-slider";
+
+// Sections
+@import "./components/sections/our-expertise";
+@import "./components/sections/provider";
