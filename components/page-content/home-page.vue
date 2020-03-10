@@ -26,6 +26,27 @@
         button_style: pageData.provider_badge[0].button_style,
       }"
     />
+    <projects-home
+      :heading="pageData.project_heading"
+      :text="pageData.project_text"
+      :nav="pageData.projects_tag_list"
+      :bricks="pageData.projects_links"
+    />
+    <numbers
+      :heading="pageData.numbers_heading"
+      :bricks="pageData.numbers_brick"
+    />
+    <testimonialsSlider
+      :heading="pageData.testimonials_heading"
+    />
+    <clients
+      :logos="pageData.clients"
+    />
+    <contactUs
+      :heading="pageData.pre_footer_heading"
+      :text="pageData.pre_footer_text"
+      :buttons="pageData.pre_footer_button"
+    />
   </div>
 </template>
 
@@ -34,6 +55,11 @@ import heroPrimary from '~/components/hero/hero-primary';
 import techSlider from '~/components/sliders/tech-slider';
 import ourExpertise from '~/components/sections/our-expertise';
 import provider from '~/components/sections/provider';
+import projectsHome from '~/components/sections/projects-home';
+import numbers from '~/components/sections/numbers';
+import testimonialsSlider from '~/components/sliders/testimonials-slider';
+import clients from '~/components/sections/clients';
+import contactUs from '~/components/sections/contact-us';
 
 export default {
   props: {
@@ -43,15 +69,16 @@ export default {
     }
   },
 
-  mounted() {
-    console.log(this.pageData, 'hp')
-  },
-
   components: {
     heroPrimary,
     techSlider,
     ourExpertise,
-    provider
+    provider,
+    projectsHome,
+    numbers,
+    testimonialsSlider,
+    clients,
+    contactUs
   }
 }
 </script>

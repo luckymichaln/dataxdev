@@ -37,10 +37,6 @@ export default {
     }
   },
 
-  mounted() {
-    console.log(this.footerData)
-  },
-
   components: {
     pageFooterColumns
   }

@@ -45,10 +45,6 @@ export default {
     }
   },
 
-  mounted() {
-    console.log(this.text, 'hero', this.buttons, 'buttons')
-  },
-
   components: {
     xButton
   }

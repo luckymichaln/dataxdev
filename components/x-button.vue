@@ -35,10 +35,6 @@ export default {
         'button--bordered': b.button_style.toLowerCase() === 'bordered'
       }
     }
-  },
-
-  mounted() {
-    console.log(this.button, 'button')
   }
 }
 </script>

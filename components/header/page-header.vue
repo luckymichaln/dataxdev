@@ -25,10 +25,6 @@ export default {
     }
   },
 
-  mounted() {
-    console.log(this.headerData, 'header')
-  },
-
   components: {
     xButton,
     pageHeaderNav
