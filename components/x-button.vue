@@ -1,7 +1,7 @@
 <template>
   <div class="button-wrapper">
     <prismic-link
-      v-if="button.button_url.link_type.toLowerCase() === ('document' || 'web')"
+      v-if="button.button_url && button.button_url.link_type.toLowerCase() === ('document' || 'web')"
       :field="button.button_url"
       :class="buttonClass(button)"
     >

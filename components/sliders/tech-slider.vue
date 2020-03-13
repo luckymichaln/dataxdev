@@ -1,7 +1,10 @@
 <template>
   <section class="tech-slider">
     <div class="container tech-slider__wrapper">
-      <header class="tech-slider__header">
+      <header
+        v-if="heading"
+        class="tech-slider__header"
+      >
         <prismic-rich-text class="header-heading" :field="heading"/>
       </header>
       <div class="tech-slider__main">
