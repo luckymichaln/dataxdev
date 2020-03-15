@@ -1,0 +1,25 @@
+.something-else {
+  position: relative;
+  margin-top: 130px;
+
+  &__header {
+    text-align: center;
+  }
+
+  &__text {
+    margin: 24px auto 100px;
+    max-width: 660px;
+    text-align: center;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -160px;
+    left: 0;
+    z-index: -1;
+    height: 530px;
+    width: 100vw;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F0F7FD 100%);
+  }
+}

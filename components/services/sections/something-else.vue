@@ -2,8 +2,11 @@
   <div class="something-else">
     <div class="container">
       <header class="something-else__header">
-        <p>{{ heading }}</p>
-        <prismic-rich-text :field="text"/>
+        <p class="heading heading-secondary">{{ heading }}</p>
+        <prismic-rich-text
+          :field="text"
+          class="something-else__text text"
+        />
       </header>
       <techSlider :slides="list" />
     </div>
