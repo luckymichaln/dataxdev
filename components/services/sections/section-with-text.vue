@@ -40,10 +40,11 @@ export default {
 
   methods: {
     innerClass(textPosition) {
+      console.log(textPosition)
       return {
         'section-with-text__inner': true,
-        'section-with-text__inner--text-left': textPosition === 'left',
-        'section-with-text__inner--text-right': textPosition === 'right',
+        'section-with-text__inner--text-left': textPosition.toLowerCase() === 'left',
+        'section-with-text__inner--text-right': textPosition.toLowerCase() === 'right',
       }
     }
   }

@@ -9,8 +9,12 @@
 @import "./global/router-transitions";
 @import "./global/typography";
 
+// Helpers
+@import "./helpers/aspect-ratio";
+
 // Pages
 @import "./pages/home-page";
+@import "./pages/services-page";
 
 // Components
 @import "./components/header/header";
@@ -19,9 +23,11 @@
 @import "./components/footer/footer-columns";
 @import "./components/button";
 @import "./components/hero/hero-primary";
+@import "./components/hero/services-hero";
 @import "./components/sliders/tech-slider";
 
 // Sections
 @import "./components/sections/our-expertise";
 @import "./components/sections/provider";
 @import "./components/sections/projects-home";
+@import "./components/sections/section-with-text";

@@ -1,0 +1,9 @@
+.section-with-text {
+  &__inner {
+    display: flex;
+
+    &--text-right {
+      flex-direction: row-reverse;
+    }
+  }
+}
