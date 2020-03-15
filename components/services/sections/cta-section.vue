@@ -3,18 +3,20 @@
     <div class="container">
       <prismic-rich-text
         :field="heading"
-        class="cta-section__heading"
+        class="cta-section__heading heading-3"
       />
       <prismic-rich-text
         :field="text"
-        class="cta-section__text"
+        class="cta-section__text text"
       />
       <x-button :button="button" />
     </div>
-    <img
-      src="~/assets/static/images/components/outsourcing.svg"
-      alt="Outsourcing DataX Dev"
-    />
+    <div class="cta-section__image">
+      <img
+        src="~/assets/static/images/components/outsourcing.svg"
+        alt="Outsourcing DataX Dev"
+      />
+    </div>
   </div>
 </template>
 
