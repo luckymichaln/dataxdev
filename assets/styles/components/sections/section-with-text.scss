@@ -5,5 +5,70 @@
     &--text-right {
       flex-direction: row-reverse;
     }
+
+    .col--text__heading {
+      margin-bottom: 24px;
+    }
+
+    .col--text__text {
+      strong, b {
+        color: $color-text-heading;
+        font-weight: 500;
+      }
+
+      a {
+        font-weight: 500;
+      }
+    }
+
+    &--text-right {
+      .col--image {
+        margin-right: 190px;
+      }
+    }
+    &--text-left {
+      .col--image {
+        width: 100%;
+        max-width: 700px;
+
+        .col--text__image {
+          position: relative;
+          right: -100px;
+        }
+      }
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &.col--text {
+      width: 100%;
+      max-width: 455px;
+    }
+  }
+
+  .services-page--blue & {
+    .col--text__text a {
+      color: $color-blue;
+      font-weight: 600;
+    }
+  }
+  .services-page--green & {
+    .col--text__text a {
+      color: $color-green;
+    }
+  }
+  .services-page--yellow & {
+    .col--text__text a {
+      color: $color-yellow;
+    }
+  }
+  .services-page--red & {
+    .col--text__text a {
+      color: $color-red;
+    }
   }
 }

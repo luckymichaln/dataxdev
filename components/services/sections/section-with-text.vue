@@ -5,11 +5,11 @@
         <div class="section-with-text__col col--text">
           <prismic-rich-text
             :field="text.section_title"
-            class="col--text__heading"
+            class="col--text__heading heading-3"
           />
           <prismic-rich-text
             :field="text.section_text"
-            class="col--text__text"
+            class="col--text__text text"
           />
         </div>
         <div class="section-with-text__col col--image">

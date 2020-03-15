@@ -1,2 +1,14 @@
 .services-page {
+  &--blue {
+    color: $color-blue;
+  }
+  &--green {
+    color: $color-green;
+  }
+  &--red {
+    color: $color-red;
+  }
+  &--yellow {
+    color: $color-yellow;
+  }
 }
