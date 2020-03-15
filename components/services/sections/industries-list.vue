@@ -2,14 +2,24 @@
   <div class="industries-list">
     <div class="container">
       <header class="industries-list">
-        <prismic-rich-text :field="heading" />
+        <prismic-rich-text
+          :field="heading"
+          class="industries-list__heading heading-3"
+        />
       </header>
-      <div class="industries-list__blocks">
+      <div class="industries-list__cards">
         <div
-          v-for="(block, index) in blocks"
+          v-for="(card, index) in cards"
           :key="index"
+          class="card"
         >
-          {{ block.industries }}
+          <img
+            v-if="card.image.url"
+            :src="card.image.url"
+            :alt="card.image.alt"
+            class="card-image"
+          />
+          <span class="card-text">{{ card.industries }}</span>
         </div>
       </div>
     </div>
@@ -23,7 +33,7 @@ export default {
       type: Array,
       default: () => []
     },
-    blocks: {
+    cards: {
       type: Array,
       default: () => []
     }

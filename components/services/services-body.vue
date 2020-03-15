@@ -17,7 +17,7 @@
       <industriesList
         v-if="section.slice_type === 'industries_list'"
         :heading="section.primary.section_title"
-        :blocks="section.items"
+        :cards="section.items"
       />
       <partners
         v-if="section.slice_type === 'partners_slider'"

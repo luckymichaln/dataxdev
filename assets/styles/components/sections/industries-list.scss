@@ -1,0 +1,50 @@
+.industries-list {
+  position: relative;
+  margin-top: 100px;
+
+  &__heading {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 240px;
+      height: 153px;
+      margin: 0 16px 32px;
+      border: 1px solid #F0F4F8;
+      border-radius: 24px;
+      background: $color-white;
+      box-shadow: 0px 8px 16px rgba(33, 78, 146, 0.08), 0px 2px 5px rgba(33, 78, 146, 0.1);
+
+      .card-text {
+        display: block;
+        margin-top: 17px;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: $font-accent;
+        color: $color-text-heading;
+      }
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -150px;
+    left: -10vw;
+    z-index: -1;
+    height: 530px;
+    width: 120vw;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #FFFFFF 45.93%, #F0F7FD 97.63%);
+  }
+}
