@@ -36,9 +36,9 @@
       :heading="pageData.numbers_heading"
       :bricks="pageData.numbers_brick"
     />
-    <testimonialsSlider
+    <!-- <testimonialsSlider
       :heading="pageData.testimonials_heading"
-    />
+    /> -->
     <clients
       :logos="pageData.clients"
     />
