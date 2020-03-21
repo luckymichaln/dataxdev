@@ -1,3 +1,150 @@
 .projects-home {
+  &__header {
+    .header-heading {
+      margin-bottom: 24px;
+    }
 
+    .header-text {
+      max-width: 465px;
+      margin-bottom: 32px;
+      line-height: 22px;
+    }
+  }
+
+  &__bricks {
+    .bricks-nav {
+      margin-bottom: 40px;
+      display: flex;
+
+      .nav-el {
+        margin-right: 10px;
+        border-radius: 12px;
+        border: 1px solid transparent;
+        transition: .2s;
+
+        button {
+          padding: 10px 18px;
+          font-size: 16px;
+          font-weight: 500;
+          font-family: $font-regular;
+          color: $color-text-heading;
+          cursor: pointer;
+        }
+
+        &--active {
+          border: 1px solid rgba(255, 255, 255, 0.48);
+          color: $color-white;
+          background-color: $color-red;
+          box-shadow: 0px 6px 16px rgba(240, 82, 82, 0.02), 0px 2px 8px rgba(240, 82, 82, 0.24);
+
+          button {
+            color: inherit;
+            font-size: inherit;
+          }
+        }
+      }
+    }
+  }
+
+  .bricks__main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -24px;
+
+    .main-transition {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .badge-list {
+      display: flex;
+
+      &__el {
+        padding: 6px 8px 7px;
+        border-radius: 16px;
+        font-size: 14px;
+        font-weight: 500;
+        color: $color-white;
+
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+
+        &--yellow {
+          background-color: #FAAA4B;
+        }
+        &--purple {
+          background-color: #735CD2;
+        }
+        &--red {
+          background-color: #CD4E4E;
+        }
+        &--green {
+          background-color: #50D77E;
+        }
+      }
+    }
+
+    .main-link {
+      width: calc(100% / 3);
+      height: 384px;
+      padding: 0 24px;
+      margin-bottom: 48px;
+
+      &:nth-child(3n + 2) {
+        height: 343px;
+      }
+
+      &:nth-child(3n + 5) {
+        position: relative;
+        top: -24px;
+      }
+
+      &-heading {
+        margin: 12px 0;
+        color: $color-white;
+      }
+
+      &-text {
+        color: rgba($color-white, .56);
+      }
+
+      &__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        padding: 32px 40px;
+        border-radius: 32px;
+        overflow: hidden;
+        background-size: cover;
+
+        > * {
+          z-index: 10;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background:  linear-gradient(180deg, rgba(0, 0, 0, 0) 25.13%, rgba(0, 0, 0, 0.686497) 72.3%, #000000 121.87%);
+        }
+      }
+    }
+  }
+
+  .bricks-enter-active, .bricks-leave-active {
+    transition: all .2s;
+  }
+
+  .bricks-enter, .bricks-leave-to {
+    opacity: 0;
+  }
 }

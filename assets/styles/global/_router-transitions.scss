@@ -1,15 +1,6 @@
-.global-slide-enter-active, .global-slide-leave-active {
-  position: relative;
-  transform: translateY(0);
-  transition: .2s;
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .8s ease-out;
 }
-
-.global-slide-enter {
-  transform: translateY(10px);
-  opacity: 0;
-}
-
-.global-slide-leave-to {
-  transform: translateY(-10px);
+.fade-enter, .fade-leave-to {
   opacity: 0;
 }
