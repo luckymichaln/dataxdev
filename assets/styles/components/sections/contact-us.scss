@@ -1,0 +1,24 @@
+.contact-us {
+  padding-bottom: 100px;
+  background: linear-gradient(180deg, #FFFFFF 44.2%, #F0F7FD 111.94%);
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__image {
+    position: relative;
+    left: 60px;
+  }
+
+  .info-text {
+    max-width: 465px;
+    margin: 32px 0;
+  }
+}

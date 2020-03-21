@@ -5,9 +5,9 @@
         <div class="contact-us__info">
           <prismic-rich-text
             :field="heading"
-            class="info-heading"
+            class="info-heading heading-secondary"
           />
-          <p class="info-text">{{ text }}</p>
+          <p class="info-text text">{{ text }}</p>
           <xButton
             v-for="(button, index) in buttons"
             :key="index"
