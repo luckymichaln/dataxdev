@@ -53,6 +53,12 @@
               </nuxt-link>
             </div>
           </transition-group>
+          <nuxt-link
+            :to="{ name: 'projects' }"
+            class="link-all"
+          >
+            Check all projects
+          </nuxt-link>
         </div>
       </div>
     </div>

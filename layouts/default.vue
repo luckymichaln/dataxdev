@@ -1,6 +1,6 @@
 <template>
   <div class="mighty-wrapper">
-    <pageHeader :headerData="headerData" />
+    <!-- <pageHeader :headerData="headerData" /> -->
     <transition name="fade">
       <nuxt />
     </transition>
