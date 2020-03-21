@@ -1,5 +1,5 @@
 <template>
-  <header class="page-header">
+  <header :class="pageHeaderClass">
     <div class="container page-header__wrapper">
       <nuxt-link
         :to="{ name: 'index' }"
@@ -22,6 +22,18 @@ export default {
     headerData: {
       type: Object,
       default: () => {},
+    },
+    navTop: Boolean,
+    navDown: Boolean,
+  },
+
+  computed: {
+    pageHeaderClass() {
+      return {
+        'page-header': true,
+        'page-header--hidden': this.pageDown,
+        'page-header--visible': this.pageTop,
+      }
     }
   },
 

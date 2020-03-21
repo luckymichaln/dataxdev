@@ -1,7 +1,4 @@
 .page-header {
-  position: fixed;
-  top: 0;
-  left: 0;
   z-index: 1000;
   width: 100%;
   background-color: transparent;
@@ -80,5 +77,23 @@
       background-color: $color-red;
       transition: .2s;
     }
+  }
+
+  &--sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000099;
+    transform: translateY(-100px);
+    background-color: $color-white;
+    box-shadow: 0px 16px 32px rgba(33, 78, 146, 0.08), 0px 2px 8px rgba(33, 78, 146, 0.1);
+  }
+
+  &--ready {
+    transition: transform .4s;
+  }
+
+  &--visible {
+    transform: translateY(0);
   }
 }
