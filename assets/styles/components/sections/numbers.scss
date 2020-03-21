@@ -1,0 +1,71 @@
+.numbers {
+  position: relative;
+  top: -240px;
+  margin-bottom: -240px;
+
+  &__header {
+    @extend .heading-secondary;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 55px;
+
+    * {
+      color: $color-white;
+    }
+  }
+
+  &__bricks {
+    display: flex;
+    justify-content: center;
+
+    .brick {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+      max-width: 240px;
+      min-height: 232px;
+      padding-bottom: 32px;
+      border: 1px solid #F0F4F8;
+      border-radius: 24px;
+      background: #FFFFFF;
+      box-shadow: 0px 8px 16px rgba(33, 78, 146, 0.08), 0px 2px 5px rgba(33, 78, 146, 0.1);
+
+      &-number {
+        margin-bottom: 16px;
+        font-size: 56px;
+        font-weight: 600;
+        color: $color-gray--dark;
+      }
+
+      &-image {
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 50px;
+        width: 50px;
+        background-repeat: no-repeat;
+
+        &--countries {
+          background: url(~assets/static/icons/icon_countries.svg) center center no-repeat;
+        }
+        &--projects {
+          background: url(~assets/static/icons/icon_projects.svg) center center no-repeat;
+        }
+        &--business {
+          background: url(~assets/static/icons/icon_business.svg) center center no-repeat;
+        }
+        &--customers {
+          background: url(~assets/static/icons/icon_customers.svg) center center no-repeat;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 48px;
+      }
+    }
+  }
+}
