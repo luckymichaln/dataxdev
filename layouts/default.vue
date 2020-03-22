@@ -40,8 +40,6 @@ export default {
       const header = document.getElementsByClassName('page-header')[0]
       const sT = window.pageYOffset || document.documentElement.scrollTop;
 
-      console.log(sT, this.savedScroll)
-
       if (window.pageYOffset > this.triggerDownValue) {
 
         if (!body.classList.contains('stamp-top') && !header.classList.contains('page-header--sticky')) {
@@ -65,25 +63,6 @@ export default {
       }
 
       this.savedScroll = sT <= 0 ? 0 : sT;
-
-      // if (document && window) {
-      //   document.addEventListener('scroll', event => {
-      //     const top = document.body.getBoundingClientRect().top;
-
-      //     if (top > scrollPos) {
-      //       this.navTop = true;
-      //       this.navDown = false;
-      //       console.log('top')
-      //     } else {
-      //       this.navTop = false;
-      //       this.navDown = true;
-      //       console.log('down')
-      //     }
-      //     scrollPos = top;
-
-      //     console.log(this.navTop, this.navDown)
-      //   });
-      // }
     }
   },
 

@@ -8,7 +8,6 @@
       :pageType="pageData.content_name"
     />
     <servicesBody :data="pageData.body" />
-    <!-- {{pageData}} -->
   </div>
 </template>
 

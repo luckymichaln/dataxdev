@@ -1,5 +1,5 @@
 <template>
-  <section class="contact-us">
+  <section :class="contactUsClass()">
     <div class="container">
       <div class="contact-us__wrapper">
         <div class="contact-us__info">
@@ -7,7 +7,17 @@
             :field="heading"
             class="info-heading heading-secondary"
           />
-          <p class="info-text text">{{ text }}</p>
+          <prismic-rich-text
+            v-if="typeof text === 'object'"
+            :field="text"
+            class="info-text text"
+          />
+          <p
+            v-else
+            class="info-text text"
+          >
+            {{ text }}
+          </p>
           <xButton
             v-for="(button, index) in buttons"
             :key="index"
@@ -34,10 +44,23 @@ export default {
       type: Array,
       default: () => []
     },
-    text: String,
+    text: [String, Array],
     buttons: {
       type: Array,
       default: () => []
+    },
+    framed: {
+      type: Boolean,
+      default: false
+    }
+  },
+
+  methods: {
+    contactUsClass() {
+      return {
+        'contact-us': true,
+        'contact-us--framed': this.framed,
+      }
     }
   },
 

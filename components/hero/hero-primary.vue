@@ -4,14 +4,19 @@
       <div class="hero__wrapper">
         <div class="hero__text">
           <prismic-rich-text
+            v-if="heading"
             class="hero-heading heading-primary"
             :field="heading"
           />
           <prismic-rich-text
+            v-if="text"
             class="hero-text text"
             :field="text"
           />
-          <div class="hero__actions">
+          <div
+            v-if="buttons"
+            class="hero__actions"
+          >
             <x-button
               v-for="(b, i) in buttons"
               :key="i"
