@@ -1,0 +1,19 @@
+.quote-accent {
+  padding: 255px 0 340px;
+  background: url('~assets/static/images/about-us/accent_quote_bg.svg') center bottom no-repeat;
+
+  &-heading {
+    max-width: 975px;
+    margin: 0 auto 24px;
+    text-align: center;
+  }
+
+  &__text {
+    text-align: center;
+
+    a {
+      font-weight: 500;
+      color: $color-red;
+    }
+  }
+}
