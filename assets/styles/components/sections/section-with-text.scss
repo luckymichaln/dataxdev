@@ -47,6 +47,39 @@
     &.col--text {
       width: 100%;
       max-width: 455px;
+
+      ul li {
+        position: relative;
+        padding-left: 48px;
+        margin-bottom: 32px;
+        font-weight: 600;
+        color: $color-text-heading;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: -6px;
+          left: 0;
+          display: block;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background-color: rgba(240, 82, 82, 0.08);
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 2px;
+          left: 8px;
+          width: 16px;
+          height: 16px;
+          border: 1px solid #FDFEFF;
+          border-radius: 50%;
+          background-color: #F05252;
+          box-shadow: 0px 4px 8px rgba(240, 82, 82, 0.32)
+        }
+      }
     }
   }
 
