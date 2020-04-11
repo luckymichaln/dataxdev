@@ -15,7 +15,10 @@
             class="info-heading heading heading-3"
           />
           <p class="info-text">{{ text }}</p>
-          <x-button :button="button" />
+          <xButton
+            @click.native="openModal(true)"
+            :button="button"
+          />
         </div>
       </div>
     </div>
@@ -35,6 +38,12 @@ export default {
     button: {
       type: Object,
       default: () => {}
+    }
+  },
+
+  methods: {
+    openModal(open) {
+      this.$store.commit('ui/SET_MODAL_OPEN', { modalOpened: open });
     }
   },
 

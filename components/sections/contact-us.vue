@@ -22,6 +22,7 @@
             v-for="(button, index) in buttons"
             :key="index"
             :button="button"
+            @click.native="openModal(true)"
           />
         </div>
         <div class="contact-us__image">
@@ -61,6 +62,10 @@ export default {
         'contact-us': true,
         'contact-us--framed': this.framed,
       }
+    },
+
+    openModal(open) {
+      this.$store.commit('ui/SET_MODAL_OPEN', { modalOpened: open });
     }
   },
 

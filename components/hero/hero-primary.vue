@@ -17,10 +17,11 @@
             v-if="buttons"
             class="hero__actions"
           >
-            <x-button
+            <xButton
               v-for="(b, i) in buttons"
               :key="i"
               :button="b"
+              @click.native="openModal(true, b)"
             />
           </div>
         </div>
@@ -47,6 +48,14 @@ export default {
     buttons: {
       type: Array,
       default: () => []
+    }
+  },
+
+  methods: {
+    openModal(open, b) {
+      if (b.button_url.link_type === 'Any') {
+        this.$store.commit('ui/SET_MODAL_OPEN', { modalOpened: open });
+      }
     }
   },
 

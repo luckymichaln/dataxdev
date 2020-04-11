@@ -5,6 +5,7 @@ import Vuex from 'vuex';
 import header from './header';
 import footer from './footer';
 import pages from './pages';
+import ui from './ui';
 
 Vue.use(Vuex)
 
@@ -13,6 +14,7 @@ const createStore = () => {
     header,
     footer,
     pages,
+    ui,
   }
 
   return new Vuex.Store({

@@ -8,7 +8,10 @@
         <img :src="headerData.logo.url" alt="DataX" />
       </nuxt-link>
       <pageHeaderNav :navList="headerData.body" />
-      <x-button :button="headerData.button[0]" />
+      <x-button
+        :button="headerData.button[0]"
+        @click.native="openModal(true)"
+      />
     </div>
   </header>
 </template>
@@ -34,6 +37,12 @@ export default {
         'page-header--hidden': this.pageDown,
         'page-header--visible': this.pageTop,
       }
+    }
+  },
+
+  methods: {
+    openModal(open) {
+      this.$store.commit('ui/SET_MODAL_OPEN', { modalOpened: open });
     }
   },
 

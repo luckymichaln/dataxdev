@@ -5,6 +5,9 @@
       <nuxt />
     </transition>
     <pageFooter :footerData="footerData" />
+    <!-- <transition name="fade"> -->
+      <modalContact v-if="modalOpened" />
+    <!-- </transition> -->
   </div>
 </template>
 
@@ -14,11 +17,13 @@ import Prismic from "prismic-javascript";
 import PrismicConfig from "~/prismic.config.js";
 import pageHeader from '../components/header/page-header';
 import pageFooter from '../components/footer/page-footer';
+import modalContact from '../components/modals/modal-contact';
 
 export default {
   computed: {
     ...mapState('header', ['headerData']),
     ...mapState('footer', ['footerData']),
+    ...mapState('ui', ['modalOpened']),
   },
 
   data() {
@@ -67,7 +72,8 @@ export default {
 
   components: {
     pageHeader,
-    pageFooter
+    pageFooter,
+    modalContact
   }
 }
 </script>

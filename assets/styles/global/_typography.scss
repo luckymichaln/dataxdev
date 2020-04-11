@@ -42,6 +42,11 @@ h6,
   line-height: 22px;
   color: $color-text;
 
+  &--bold {
+    font-weight: 600;
+    color: #404966;
+  }
+
   &--center {
     text-align: center;
   }
