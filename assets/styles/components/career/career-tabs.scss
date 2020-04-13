@@ -14,7 +14,6 @@
     background: $color-white;
     box-shadow: 0px 8px 16px rgba(33, 78, 146, 0.08), 0px 2px 5px rgba(33, 78, 146, 0.1);
     overflow: hidden;
-    transition: .8s;
 
     &__header {
       display: flex;
@@ -114,6 +113,7 @@
 
     &--opened {
       max-height: 3000px;
+      transition: .8s;
 
       .tab__arrow {
         transform: rotate(180deg);
