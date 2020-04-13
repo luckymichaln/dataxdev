@@ -1,13 +1,19 @@
 <template>
   <div class="mighty-wrapper">
-    <pageHeader :headerData="headerData" />
-    <transition name="fade">
+    <pageHeader
+      v-if="headerData"
+      :headerData="headerData"
+    />
+    <transition name="fade" mode="out-in">
       <nuxt />
     </transition>
-    <pageFooter :footerData="footerData" />
-    <!-- <transition name="fade"> -->
+    <pageFooter
+      v-if="footerData"
+      :footerData="footerData"
+    />
+    <transition name="modal" mode="out-in">
       <modalContact v-if="modalOpened" />
-    <!-- </transition> -->
+    </transition>
   </div>
 </template>
 
@@ -32,6 +38,11 @@ export default {
       triggerDownValue: 81,
       triggerUpValue: 2,
     }
+  },
+
+  async created () {
+    await this.$store.dispatch('header/GET_HEADER_DATA');
+    await this.$store.dispatch('footer/GET_FOOTER_DATA');
   },
 
   mounted() {

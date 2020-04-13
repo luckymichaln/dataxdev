@@ -25,7 +25,13 @@
                 class="label"
                 for="option__desktop"
               >
-                <input type="checkbox" id="option__desktop" name="subject-picker-option" checked />
+                <input
+                  checked
+                  type="checkbox"
+                  name="subject-picker-option"
+                  id="option__desktop"
+                  v-model="form.subject.web"
+                />
                 <div class="label__inner">
                   <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M24.5 11.5C25.3284 11.5 26 10.8284 26 10C26 9.17157 25.3284 8.5 24.5 8.5C23.6716 8.5 23 9.17157 23 10C23 10.8284 23.6716 11.5 24.5 11.5Z" fill="currentColor"/>
@@ -42,7 +48,12 @@
                 class="label"
                 for="option__mobile"
               >
-                <input type="checkbox" id="option__mobile" name="subject-picker-option" />
+                <input
+                  type="checkbox"
+                  name="subject-picker-option"
+                  id="option__mobile"
+                  v-model="form.subject.mobile"
+                />
                 <div class="label__inner">
                   <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9.5 8.5H39.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -56,7 +67,12 @@
                 class="label"
                 for="option__other"
               >
-                <input type="checkbox" id="option__other" name="subject-picker-option" />
+                <input
+                  type="checkbox"
+                  name="subject-picker-option"
+                  id="option__other"
+                  v-model="form.subject.other"
+                />
                 <div class="label__inner">
                   <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16.45 16.45C15.3049 17.5952 13.7982 18.3079 12.1865 18.4668C10.5748 18.6256 8.95794 18.2207 7.61134 17.321C6.26474 16.4213 5.27174 15.0826 4.80154 13.5329C4.33134 11.9832 4.41302 10.3184 5.03268 8.82211C5.65234 7.32587 6.77162 6.09077 8.19983 5.32726C9.62803 4.56375 11.2768 4.31907 12.8652 4.63491C14.4536 4.95075 15.8833 5.80757 16.9108 7.05937C17.9382 8.31117 18.4999 9.88051 18.5 11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -79,38 +95,67 @@
                 class="text text--bold"
                 for="contact-form--name">Name *</label
               >
-              <input id="contact-form--name" placeholder="Your name" required/>
+              <input
+                required
+                id="contact-form--name"
+                placeholder="Your name"
+                v-model="form.name"
+              />
             </fieldset>
             <fieldset>
               <label
                 class="text text--bold"
                 for="contact-form--email">Email *</label
               >
-              <input id="contact-form--email" type="email" placeholder="Your email address" />
+              <input
+                type="email"
+                id="contact-form--email"
+                placeholder="Your email address"
+                v-model="form.email"
+              />
             </fieldset>
             <fieldset>
               <label
                 class="text text--bold"
                 for="contact-form--number">Mobile number</label
               >
-              <input id="contact-form--number" type="number" placeholder="Mobile number" />
+              <input
+                type="number"
+                id="contact-form--number"
+                placeholder="Mobile number"
+                v-model="form.phone"
+              />
             </fieldset>
             <fieldset>
               <label
                 class="text text--bold"
                 for="contact-form--idea">Short description of your idea *</label
               >
-              <textarea id="contact-form--idea" placeholder="What idea you have and what you expect..." required></textarea>
+              <textarea
+                required
+                id="contact-form--idea"
+                placeholder="What idea you have and what you expect..."
+                v-model="form.message"
+              ></textarea>
             </fieldset>
             <fieldset>
               <div class="field-inline">
                 <label for="contact-form--file">
-                  <input type="file" id="contact-form--file" />
-                  <span class="text text-accent">
+                  <input
+                    type="file"
+                    id="contact-form--file"
+                    @change="onFileChange"
+                  />
+                  <p class="text-accent">
                     <img src="~/assets/static/icons/icon_message.svg" alt="Icon message" />
-                    Add attachment
-                  </span>
+                    <span>{{ fileName || 'Add attachment' }}</span>
+                  </p>
                 </label>
+                <button
+                  v-if="fileName"
+                  class="btn-remove-file"
+                  @click="removeFile"
+                />
                 <span class="text">We welcome everything from napkin sketches to complex business analysis.</span>
               </div>
             </fieldset>
@@ -140,9 +185,52 @@
 import xButton from '~/components/x-button';
 
 export default {
+  data() {
+    return {
+      form: {
+        subject: {
+          web: true,
+          mobile: false,
+          other: false,
+        },
+        name: null,
+        email: null,
+        phone: null,
+        message: null,
+        file: null,
+      },
+      fileName: null
+    }
+  },
+
   methods: {
     openModal(open) {
       this.$store.commit('ui/SET_MODAL_OPEN', { modalOpened: open });
+    },
+
+    onFileChange(e) {
+      var files = e.target.files || e.dataTransfer.files;
+      if (!files.length) {
+        return;
+      }
+      this.fileName = files[0].name;
+      this.createFile(files[0]);
+    },
+
+    createFile(file) {
+      var image = new Image();
+      var reader = new FileReader();
+      var vm = this;
+
+      reader.onload = (e) => {
+        vm.form.file = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    },
+
+    removeFile() {
+      this.fileName = null;
+      this.form.file = null;
     }
   },
 

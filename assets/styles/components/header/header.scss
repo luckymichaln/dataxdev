@@ -37,12 +37,9 @@
 
     &__submenu {
       position: relative;
+
       .link-text {
         padding-bottom: 20px;
-      }
-
-      &:hover .submenu-box {
-        display: flex;
       }
     }
   }

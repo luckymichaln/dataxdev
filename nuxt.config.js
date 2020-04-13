@@ -2,7 +2,7 @@ import pkg from './package';
 const PrismicConfig = require('./prismic.config');
 
 export default {
-  mode: 'universal',
+  mode: 'spa',
 
   /*
   ** Headers of the page

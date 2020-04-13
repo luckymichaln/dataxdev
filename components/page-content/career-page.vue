@@ -1,10 +1,17 @@
 <template>
   <div class="career-page">
-    {{pageData}}
+    <careerHero
+      :heading="pageData.hero_title"
+      :text="pageData.hero_text"
+    />
+    <careerTabs :tabs="pageData.career_tab" />
   </div>
 </template>
 
 <script>
+import careerHero from '~/components/career/career-hero';
+import careerTabs from '~/components/career/components/career-tabs';
+
 export default {
   props: {
     pageData: {
@@ -12,6 +19,11 @@ export default {
       default: () => {},
     }
   },
+
+  components: {
+    careerHero,
+    careerTabs
+  }
 }
 </script>
 

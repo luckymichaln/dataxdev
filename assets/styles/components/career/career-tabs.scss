@@ -1,0 +1,147 @@
+.career-tabs {
+  position: relative;
+  z-index: 20;
+
+  .tab {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border: 1px solid #F0F4F8;
+    border-radius: 24px;
+    max-width: 1055px;
+    max-height: 160px;
+    margin: 0 auto;
+    background: $color-white;
+    box-shadow: 0px 8px 16px rgba(33, 78, 146, 0.08), 0px 2px 5px rgba(33, 78, 146, 0.1);
+    overflow: hidden;
+    transition: .8s;
+
+    &__header {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    &__arrow {
+      margin: 0 16px 0 auto;
+      transition: .3s;
+    }
+
+    &__body {
+      padding: 40px 56px;
+      border-top: 1px solid #F0F4F8;
+      margin: 16px -16px 0;
+
+      p {
+        margin-bottom: 24px;
+        font-size: 18px;
+        color: $color-text-heading;
+      }
+
+      ul:not(:last-of-type) {
+        margin-bottom: 56px;
+      }
+
+      li {
+        @extend .text;
+        position: relative;
+        padding-left: 56px;
+
+        &:not(:last-of-type) {
+          margin-bottom: 16px;
+        }
+
+        &::before {
+          content: url(~assets/static/icons/icon_check.svg);
+          position: absolute;
+          top: 0;
+          left: 22px;
+        }
+      }
+
+      .button-wrapper {
+        justify-content: center;
+        width: 100%;
+        margin-top: 40px;
+      }
+    }
+
+    &__icon {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      border: 1px solid #F0F4F8;
+      border-radius: 20px;
+      margin-right: 32px;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .info-level {
+      display: flex;
+      align-items: center;
+    }
+
+    .info-title {
+      margin-bottom: 10px;
+      font-size: 24px;
+      font-weight: 600;
+      color: $color-text-heading;
+    }
+
+    .level-dots {
+      display: flex;
+      margin-right: 8px;
+
+      .dot {
+        display: block;
+        width: 12px;
+        height: 12px;
+        margin-right: 8px;
+        border-radius: 50%;
+        background-color: #F0F4F8;
+
+        &--filled {
+          background-color: #F05252;
+        }
+      }
+    }
+
+    &--opened {
+      max-height: 3000px;
+
+      .tab__arrow {
+        transform: rotate(180deg);
+      }
+    }
+
+    &--ios .tab__icon::before {
+      content: url(~assets/static/icons/icon_ios.svg);
+    }
+
+    &--dotnet .tab__icon::before {
+      content: url(~assets/static/icons/icon_dotnet.svg);
+    }
+
+    &--product .tab__icon::before {
+      content: url(~assets/static/icons/icon_designer.svg);
+      top: 54%;
+      left: 53%;
+    }
+
+    &--account .tab__icon::before {
+      content: url(~assets/static/icons/icon_safety.svg);
+      top: 54%;
+      left: 53%;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+}

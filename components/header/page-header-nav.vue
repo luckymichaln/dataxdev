@@ -16,18 +16,25 @@
         <div
           v-else
           class="nav-el__submenu"
+          @mouseenter="openSubmenu(true)"
+          @mouseleave="openSubmenu(false)"
         >
           <span :class="submenuSpanClass">{{ navEl.primary.link_label }}</span>
-          <div class="submenu-box">
-            <prismic-link
-              v-for="e in navEl.items"
-              :key="e.menu_link_url.id"
-              :field="e.menu_link_url"
-              :class="submenuLinkClass(e)"
+          <transition name="submenu">
+            <div
+              v-if="submenuShouldOpen"
+              class="submenu-box"
             >
-              {{ e.menu_link_label }}
-            </prismic-link>
-          </div>
+              <prismic-link
+                v-for="e in navEl.items"
+                :key="e.menu_link_url.id"
+                :field="e.menu_link_url"
+                :class="submenuLinkClass(e)"
+              >
+                {{ e.menu_link_label }}
+              </prismic-link>
+            </div>
+          </transition>
         </div>
       </li>
     </ul>
@@ -40,6 +47,12 @@ export default {
     navList: {
       type: Array,
       default: () => []
+    }
+  },
+
+  data () {
+    return {
+      submenuShouldOpen: false,
     }
   },
 
@@ -65,6 +78,9 @@ export default {
         'link--blue': el.theme_colour.toLowerCase() === 'blue',
         'link--green': el.theme_colour.toLowerCase() === 'green',
       }
+    },
+    openSubmenu(shouldOpen) {
+      this.submenuShouldOpen = shouldOpen;
     }
   }
 }

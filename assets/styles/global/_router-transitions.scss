@@ -1,6 +1,29 @@
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .8s ease-out;
+.fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s;
+  }
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+
+.modal-enter-active, .modal-leave-active {
+  transform: scale(1);
+  transition: .4s;
 }
-.fade-enter, .fade-leave-to {
+
+.modal-enter, .modal-leave-to {
+  transform: scale(.95);
   opacity: 0;
 }
+
+.submenu-enter-active, .submenu-leave-active {
+  transform: translateY(0);
+  transition: .3s;
+}
+
+.submenu-enter, .submenu-leave-to {
+  transform: translateY(-15px);
+  opacity: 0;
+}
+
