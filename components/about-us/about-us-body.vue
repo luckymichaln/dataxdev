@@ -14,17 +14,17 @@
         :text="section.primary"
         :image="section.items[0].section_image"
       />
-     <featuresList
-      v-if="section.slice_type === 'key_features'"
-      :list="section.primary.features_list"
-      :heading="section.primary.section_title"
-      :text="section.primary.section_text"
-     />
-     <quoteAccent
-        v-if="section.slice_type === 'quote_accent'"
-        :quote="section.primary.section_quote"
+      <featuresList
+        v-if="section.slice_type === 'key_features'"
+        :list="section.primary.features_list"
+        :heading="section.primary.section_title"
         :text="section.primary.section_text"
-     />
+      />
+      <quoteAccent
+          v-if="section.slice_type === 'quote_accent'"
+          :quote="section.primary.section_quote"
+          :text="section.primary.section_text"
+      />
       <contactUs
         v-if="section.slice_type === 'contact_banner'"
         framed

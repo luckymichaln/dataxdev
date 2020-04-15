@@ -19,7 +19,18 @@
         :heading="section.primary.section_title"
         :cols="section.items"
       />
-
+      <contactUs
+        v-if="section.slice_type === 'contact_banner'"
+        framed
+        :heading="section.primary.banner_title"
+        :text="section.primary.banner_text"
+        :buttons="[{
+          button_label: section.primary.button_label,
+          button_theme: section.primary.button_theme,
+          button_url: section.primary.button_url,
+          button_style: section.primary.button_style,
+        }]"
+      />
     </section>
   </div>
 </template>
@@ -28,6 +39,7 @@
 import textHeading from '~/components/career/sections/text-heading';
 import imagesGrid from '~/components/career/sections/images-grid';
 import recruitmentProcess from '~/components/career/sections/recruitment-process';
+import contactUs from '~/components/sections/contact-us';
 
 
 export default {
@@ -46,6 +58,7 @@ export default {
     textHeading,
     imagesGrid,
     recruitmentProcess,
+    contactUs,
   }
 }
 </script>
