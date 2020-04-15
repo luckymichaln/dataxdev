@@ -21,7 +21,7 @@
                   :class="dotClass(tab.tab_level, i)"
                 />
               </div>
-              {{ tab.tab_level}}
+              {{ tab.tab_level }}
             </div>
           </div>
           <img

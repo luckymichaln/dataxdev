@@ -5,12 +5,14 @@
       :text="pageData.hero_text"
     />
     <careerTabs :tabs="pageData.career_tab" />
+    <careerBody :data="pageData.body" />
   </div>
 </template>
 
 <script>
 import careerHero from '~/components/career/career-hero';
-import careerTabs from '~/components/career/components/career-tabs';
+import careerBody from '~/components/career/career-body';
+import careerTabs from '~/components/career/sections/career-tabs';
 
 export default {
   props: {
@@ -22,6 +24,7 @@ export default {
 
   components: {
     careerHero,
+    careerBody,
     careerTabs
   }
 }

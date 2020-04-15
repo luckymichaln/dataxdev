@@ -19,7 +19,7 @@
           @mouseenter="openSubmenu(true)"
           @mouseleave="openSubmenu(false)"
         >
-          <span :class="submenuSpanClass">{{ navEl.primary.link_label }}</span>
+          <span :class="submenuSpanClass(true)">{{ navEl.primary.link_label }}</span>
           <transition name="submenu">
             <div
               v-if="submenuShouldOpen"
@@ -56,15 +56,6 @@ export default {
     }
   },
 
-  computed: {
-    submenuSpanClass() {
-      return {
-        'link-text': true,
-        'nuxt-link-active': this.$route.name === 'services-:slug'
-      }
-    }
-  },
-
   methods: {
     submenuLinkClass(el) {
       return {
@@ -77,6 +68,14 @@ export default {
         'link--yellow': el.theme_colour.toLowerCase() === 'yellow',
         'link--blue': el.theme_colour.toLowerCase() === 'blue',
         'link--green': el.theme_colour.toLowerCase() === 'green',
+      }
+    },
+    submenuSpanClass(submenu) {
+      return {
+        'link-text': true,
+        'link-text--submenu': submenu,
+        'link-text--submenu-opened': this.submenuShouldOpen,
+        'nuxt-link-active': this.$route.name === 'services-:slug'
       }
     },
     openSubmenu(shouldOpen) {

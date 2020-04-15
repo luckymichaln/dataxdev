@@ -55,6 +55,24 @@
     cursor: pointer;
     transition: .2s;
 
+    &--submenu {
+      padding-right: 16px;
+
+      &::after {
+        content: url(~assets/static/icons/icon_arrow.svg);
+        position: absolute;
+        top: 7px;
+        right: -7px;
+        transform: rotate(180deg);
+        line-height: 3px;
+        transition: .3s;
+      }
+
+      &-opened::after {
+        transform: none;
+      }
+    }
+
     &.nuxt-link-active {
       color: $color-red;
 
