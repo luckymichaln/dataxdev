@@ -19,6 +19,12 @@
         :heading="section.primary.section_title"
         :cols="section.items"
       />
+      <sectionWithText
+        v-if="section.slice_type === 'info_section1'"
+        headingBig
+        :text="section.primary"
+        :image="section.items[0].section_image"
+      />
       <contactUs
         v-if="section.slice_type === 'contact_banner'"
         framed
@@ -39,6 +45,7 @@
 import textHeading from '~/components/career/sections/text-heading';
 import imagesGrid from '~/components/career/sections/images-grid';
 import recruitmentProcess from '~/components/career/sections/recruitment-process';
+import sectionWithText from '~/components/services/sections/section-with-text';
 import contactUs from '~/components/sections/contact-us';
 
 
@@ -58,6 +65,7 @@ export default {
     textHeading,
     imagesGrid,
     recruitmentProcess,
+    sectionWithText,
     contactUs,
   }
 }

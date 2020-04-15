@@ -6,6 +6,10 @@
       flex-direction: row-reverse;
     }
 
+    .heading-secondary {
+      margin-bottom: 24px;
+    }
+
     .col--text__text {
       strong, b {
         color: $color-text-heading;
@@ -76,6 +80,12 @@
           box-shadow: 0px 4px 8px rgba(240, 82, 82, 0.32)
         }
       }
+    }
+  }
+
+  &__text {
+    p:not(:last-of-type) {
+      margin-bottom: 45px;
     }
   }
 
