@@ -23,7 +23,7 @@
         v-if="section.slice_type === 'info_section1'"
         headingBig
         :text="section.primary"
-        :image="section.items[0].section_image"
+        :images="section.items"
       />
       <contactUs
         v-if="section.slice_type === 'contact_banner'"

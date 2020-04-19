@@ -4,38 +4,25 @@
 
     &--text-right {
       flex-direction: row-reverse;
-    }
 
-    .heading-secondary {
-      margin-bottom: 24px;
-    }
-
-    .col--text__text {
-      strong, b {
-        color: $color-text-heading;
-        font-weight: 500;
-      }
-
-      a {
-        font-weight: 500;
-      }
-    }
-
-    &--text-right {
-      .col--image {
+      .col--images {
         margin-right: 190px;
       }
     }
     &--text-left {
-      .col--image {
+      .col--images {
         width: 100%;
         max-width: 700px;
 
-        .col--text__image {
+        .col--text__image:not(.col--text__image-in-row) {
           position: relative;
           right: -100px;
         }
       }
+    }
+
+    .heading-secondary {
+      margin-bottom: 24px;
     }
   }
 
@@ -80,6 +67,88 @@
           box-shadow: 0px 4px 8px rgba(240, 82, 82, 0.32)
         }
       }
+    }
+  }
+
+  .col--text__text {
+    strong, b {
+      color: $color-text-heading;
+      font-weight: 500;
+    }
+
+    a {
+      font-weight: 500;
+    }
+  }
+
+  .col--images__rows {
+    position: relative;
+    top: -30px;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+
+    .image {
+      border-radius: 32px;
+      overflow: hidden;
+    }
+
+    .row {
+      display: flex;
+
+      &:first-of-type {
+        position: relative;
+        left: 40px;
+
+        .col--text__image:last-of-type {
+          position: relative;
+          top: 20px;
+          align-self: flex-end;
+        }
+      }
+
+      &:last-of-type .col--text__image:last-of-type {
+        position: relative;
+        top: 30px;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 11px;
+          left: 16px;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+          border: 1px solid #072A3D;
+          border-radius: 32px;
+        }
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: 40px;
+      }
+
+      .col--text__image:not(:last-of-type) {
+        margin-right: 48px;
+      }
+    }
+  }
+
+  .col--text__image--small {
+    border-radius: 32px;
+
+
+    &:first-of-type {
+      width: 310px;
+    }
+    &:nth-of-type(2) {
+      width: 200px;
+    }
+    &:nth-of-type(3) {
+      width: 225px;
+    }
+    &:last-of-type {
+      width: 264px;
     }
   }
 

@@ -5,11 +5,9 @@
         v-for="(tab, index) in tabs"
         :key="index"
         :class="tabClass(tab.tab_type, index)"
+        @click="manageTab(index)"
       >
-        <header
-          class="tab__header"
-          @click="manageTab(index)"
-        >
+        <header class="tab__header">
           <div class="tab__icon" />
           <div class="tab__info">
             <div class="info-title">{{ tab.tab_title }}</div>

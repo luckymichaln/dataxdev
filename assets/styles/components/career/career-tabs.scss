@@ -15,11 +15,11 @@
     background: $color-white;
     box-shadow: 0px 8px 16px rgba(33, 78, 146, 0.08), 0px 2px 5px rgba(33, 78, 146, 0.1);
     overflow: hidden;
+    cursor: pointer;
 
     &__header {
       display: flex;
       align-items: center;
-      cursor: pointer;
     }
 
     &__arrow {

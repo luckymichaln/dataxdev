@@ -13,12 +13,43 @@
             class="col--text__text text"
           />
         </div>
-        <div class="section-with-text__col col--image">
-          <div class="col--text__image">
-            <img
-              :src="image.url"
-              :alt="image.alt"
-            />
+        <div class="section-with-text__col col--images">
+          <div
+            v-if="imagesRows"
+            class="col--images__rows"
+          >
+            <div
+              v-for="(row, index) in imagesRows"
+              :key="index"
+              class="row"
+            >
+              <div
+                v-for="(img, i) in row"
+                :key="i"
+                :class="imageClass()"
+              >
+                <div class="image">
+                  <img
+                    :src="img.section_image.url"
+                    :srcset="`${img.section_image.url} 1x, ${img.section_image.url} 2x`"
+                    :alt="img.section_image.alt"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            v-else
+            v-for="img in images"
+            :key="img.section_image.url"
+            :class="imageClass()"
+          >
+            <div class="image">
+              <img
+                :src="img.section_image.url"
+                :alt="img.section_image.alt"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -37,9 +68,15 @@ export default {
       type: Object,
       default: () => {}
     },
-    image: {
-      type: Object,
-      default: () => {}
+    images: {
+      type: Array,
+      default: () => []
+    }
+  },
+
+  data() {
+    return {
+      imagesRows: null,
     }
   },
 
@@ -52,6 +89,23 @@ export default {
           el.style.marginBottom = '44px';
         }
       })
+    }
+
+    if (this.images.length > 1) {
+      const rows = [];
+      let row = [];
+
+      this.images.map((img, i) => {
+          console.log(i)
+          row.push(img);
+
+        if (i > 0 && !!(i % 2)) {
+          rows.push(row);
+          row = [];
+        }
+      })
+
+      this.imagesRows = rows;
     }
   },
 
@@ -70,6 +124,13 @@ export default {
         'col--text__heading': true,
          'heading-3': !this.headingBig,
          'heading-secondary': this.headingBig,
+      }
+    },
+
+    imageClass() {
+      return {
+        'col--text__image': true,
+        'col--text__image-in-row': this.imagesRows,
       }
     }
   }

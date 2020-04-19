@@ -12,7 +12,7 @@
       <sectionWithText
         v-if="section.slice_type === 'section_with_text'"
         :text="section.primary"
-        :image="section.items[0].section_image"
+        :images="section.items"
       />
       <industriesList
         v-if="section.slice_type === 'industries_list'"
