@@ -108,6 +108,7 @@
                 for="contact-form--email">Email *</label
               >
               <input
+                required
                 type="email"
                 id="contact-form--email"
                 placeholder="Your email address"

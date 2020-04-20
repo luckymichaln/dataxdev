@@ -1,0 +1,12 @@
+.projects-grid.projects-grid--page {
+  .bricks-nav {
+    justify-content: center;
+  }
+
+  .projects-grid {
+    &__bricks {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+  }
+}

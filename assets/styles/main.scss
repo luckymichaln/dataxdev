@@ -17,6 +17,7 @@
 @import "./pages/services-page";
 @import "./pages/about-us-page";
 @import "./pages/career-page";
+@import "./pages/project-page";
 
 // Components
 @import "./components/header/header";
@@ -38,7 +39,8 @@
 @import "./components/sections/industries-list";
 @import "./components/sections/our-expertise";
 @import "./components/sections/provider";
-@import "./components/sections/projects-home";
+@import "./components/sections/projects-grid";
+@import "./components/sections/projects-grid-page";
 @import "./components/sections/section-with-text";
 @import "./components/sections/cta-section";
 @import "./components/sections/something-else";

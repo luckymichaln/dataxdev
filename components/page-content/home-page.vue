@@ -26,7 +26,7 @@
         button_style: pageData.provider_badge[0].button_style,
       }"
     />
-    <projects-home
+    <projects-grid
       :heading="pageData.project_heading"
       :text="pageData.project_text"
       :nav="pageData.projects_tag_list"
@@ -55,7 +55,7 @@ import heroPrimary from '~/components/hero/hero-primary';
 import techSlider from '~/components/sliders/tech-slider';
 import ourExpertise from '~/components/sections/our-expertise';
 import provider from '~/components/sections/provider';
-import projectsHome from '~/components/sections/projects-home';
+import projectsGrid from '~/components/sections/projects-grid';
 import numbers from '~/components/sections/numbers';
 import testimonialsSlider from '~/components/sliders/testimonials-slider';
 import clients from '~/components/sections/clients';
@@ -74,7 +74,7 @@ export default {
     techSlider,
     ourExpertise,
     provider,
-    projectsHome,
+    projectsGrid,
     numbers,
     testimonialsSlider,
     clients,
