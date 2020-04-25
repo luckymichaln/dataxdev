@@ -1,0 +1,28 @@
+.badge-list {
+  display: flex;
+
+  &__el {
+    padding: 6px 8px 7px;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $color-white;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    &--yellow {
+      background-color: #FAAA4B;
+    }
+    &--purple {
+      background-color: #735CD2;
+    }
+    &--red {
+      background-color: #CD4E4E;
+    }
+    &--green {
+      background-color: #50D77E;
+    }
+  }
+}

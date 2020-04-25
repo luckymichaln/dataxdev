@@ -123,35 +123,6 @@
       width: 100%;
     }
 
-    .badge-list {
-      display: flex;
-
-      &__el {
-        padding: 6px 8px 7px;
-        border-radius: 16px;
-        font-size: 14px;
-        font-weight: 500;
-        color: $color-white;
-
-        &:not(:last-child) {
-          margin-right: 10px;
-        }
-
-        &--yellow {
-          background-color: #FAAA4B;
-        }
-        &--purple {
-          background-color: #735CD2;
-        }
-        &--red {
-          background-color: #CD4E4E;
-        }
-        &--green {
-          background-color: #50D77E;
-        }
-      }
-    }
-
     .main-link {
       width: calc(100% / 3);
       height: 384px;
@@ -186,7 +157,13 @@
         padding: 32px 40px;
         border-radius: 32px;
         overflow: hidden;
-        background-size: cover;
+        background-size: 100%;
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover {
+          background-size: 110%;
+        }
 
         > * {
           z-index: 10;

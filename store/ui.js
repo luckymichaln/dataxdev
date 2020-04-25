@@ -1,10 +1,17 @@
 const state = () => ({
-  modalOpened: false
+  modalOpened: {
+    contact: false,
+    project: false
+  },
+  projectName: null
 })
 
 const mutations = {
-  SET_MODAL_OPEN(state, { modalOpened }) {
-    state.modalOpened = modalOpened
+  SET_MODAL_OPEN(state, { modalOpened, name, projectName }) {
+    state.modalOpened[name] = modalOpened
+    if (projectName) {
+      state.projectName = projectName
+    }
   }
 }
 

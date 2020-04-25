@@ -42,8 +42,8 @@ export default {
 
   methods: {
     openModal(open) {
-      this.$store.commit('ui/SET_MODAL_OPEN', { modalOpened: open });
-    }
+      this.$store.commit('ui/SET_MODAL_OPEN', { modalOpened: open, name: 'contact' });
+      }
   },
 
   components: {

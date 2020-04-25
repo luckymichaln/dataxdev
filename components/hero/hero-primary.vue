@@ -54,7 +54,7 @@ export default {
   methods: {
     openModal(open, b) {
       if (b.button_url.link_type === 'Any') {
-        this.$store.commit('ui/SET_MODAL_OPEN', { modalOpened: open });
+        this.$store.commit('ui/SET_MODAL_OPEN', { modalOpened: open, name: 'contact'  });
       }
     }
   },

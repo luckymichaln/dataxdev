@@ -33,10 +33,6 @@ export default {
     }
   },
 
-  created() {
-    console.log(this.pageData, 'dsdsds')
-  },
-
   components: {
     projectsGrid
   }

@@ -12,24 +12,27 @@
       :footerData="footerData"
     />
     <transition name="modal" mode="out-in">
-      <modalContact v-if="modalOpened" />
+      <modalContact v-if="modalOpened.contact" />
+      <modalProject v-if="modalOpened.project" :project="activeModalProject" />
     </transition>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 import Prismic from "prismic-javascript";
 import PrismicConfig from "~/prismic.config.js";
 import pageHeader from '../components/header/page-header';
 import pageFooter from '../components/footer/page-footer';
 import modalContact from '../components/modals/modal-contact';
+import modalProject from '../components/modals/modal-project';
 
 export default {
   computed: {
     ...mapState('header', ['headerData']),
     ...mapState('footer', ['footerData']),
     ...mapState('ui', ['modalOpened']),
+    ...mapGetters('pages', ['activeModalProject']),
   },
 
   data() {
@@ -43,6 +46,10 @@ export default {
   async created () {
     await this.$store.dispatch('header/GET_HEADER_DATA');
     await this.$store.dispatch('footer/GET_FOOTER_DATA');
+
+    if (!this.projects) {
+      await this.$store.dispatch('pages/GET_SINGLE_PAGE_DATA', { pageType: 'projects_page' })
+    }
   },
 
   mounted() {
@@ -84,7 +91,8 @@ export default {
   components: {
     pageHeader,
     pageFooter,
-    modalContact
+    modalContact,
+    modalProject
   }
 }
 </script>

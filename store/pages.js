@@ -7,7 +7,8 @@ const state = () => ({
     about_us: null,
     projects_page: null,
     service_page: null,
-  }
+  },
+  activeModalProject: null,
 })
 
 const actions = {
@@ -42,6 +43,20 @@ const getters = {
   projectsPageData: state => state.pageData.projects_page ? state.pageData.projects_page : null,
   aboutPageData: state => state.pageData.about_us ? state.pageData.about_us : null,
   servicesPageData: state => state.pageData.service_page ? state.pageData.service_page : null,
+  activeModalProject: state => {
+    const pName = window.$nuxt.$store.state.ui.projectName;
+    if (!pName || !state.pageData.projects_page) {
+      return null;
+    }
+
+    const allProjects = state.pageData.projects_page.body.filter(el => el.slice_type === 'project_row')[0].items;
+
+    return allProjects.map(el => {
+      if (el.link_label && el.link_label.toLowerCase().split(' ').join('-') === pName) {
+        return el
+      }
+    }).filter(el => el)[0];
+  }
 }
 
 export default {
