@@ -69,6 +69,12 @@ export default {
     }
   },
 
+  watch: {
+    $route(to, from) {
+      this.openModal(false);
+    }
+  },
+
   components: {
     heroPrimary,
     techSlider,

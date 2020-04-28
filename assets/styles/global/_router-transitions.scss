@@ -7,14 +7,42 @@
     opacity: 0;
   }
 
-.modal-enter-active, .modal-leave-active {
+.modal-contact-enter-active, .modal-contact-leave-active {
   transform: scale(1);
   transition: .4s;
 }
 
-.modal-enter, .modal-leave-to {
+.modal-contact-enter, .modal-contact-leave-to {
   transform: scale(.95);
   opacity: 0;
+}
+
+.modal-project-enter-active {
+  transition: .4s;
+
+  .modal__inner {
+    transition: .4s;
+  }
+}
+
+.modal-project-leave-active {
+  transition: .4s;
+
+  .modal__inner {
+    transform: translate(-50%, 20px) !important;
+    transition: .4s;
+    transition-delay: 2s;
+  }
+}
+
+.modal-project-enter, .modal-project-leave-to {
+  opacity: 0;
+
+  .modal__inner {
+    transform: translate(-50%, 20px) !important;
+    transition: .4s;
+    transition-delay: 2s;
+  }
 }
 
 .submenu-enter-active, .submenu-leave-active {

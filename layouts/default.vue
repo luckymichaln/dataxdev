@@ -11,14 +11,23 @@
       v-if="footerData"
       :footerData="footerData"
     />
-    <transition name="modal" mode="out-in">
-      <modalContact v-if="modalOpened.contact" />
-      <modalProject v-if="modalOpened.project" :project="activeModalProject" />
+    <transition name="modal-contact" mode="out-in">
+      <modalContact
+        v-if="modalOpened.contact"
+      />
+    </transition>
+    <transition name="modal-project" mode="out-in">
+      <modalProject
+        v-if="modalOpened.project"
+        :project="activeModalProject"
+      />
     </transition>
   </div>
 </template>
 
 <script>
+// import { directive as bSL } from 'v-body-scroll-lock';
+// import { bodyScrollLock } from 'v-body-scroll-lock';
 import { mapState, mapGetters } from 'vuex';
 import Prismic from "prismic-javascript";
 import PrismicConfig from "~/prismic.config.js";

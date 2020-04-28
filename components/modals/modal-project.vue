@@ -34,6 +34,7 @@
 </template>
 
 <script>
+// import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import { directive as onClickaway } from 'vue-clickaway';
 import xButton from '~/components/x-button';
 import badgeList from '~/components/shared/badge-list';
@@ -50,8 +51,16 @@ export default {
     }
   },
 
+  data() {
+    return {
+      scrollTargetElement: null,
+    }
+  },
+
   mounted() {
     console.log(this.project)
+    this.scrollTargetElement = document.querySelectorAll('.modal--project')[0];
+    console.log(this.scrollTargetElement, 'this.scrollTargetElement')
   },
 
   methods: {

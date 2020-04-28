@@ -237,7 +237,7 @@
       left: 40px;
     }
 
-    .heading-3 {
+    .main-link-heading {
       position: absolute;
       bottom: 60px;
       left: 40px;
@@ -249,7 +249,23 @@
     }
 
     .text-modal {
-      color: rgba(#363C51, .56);
+      h1 {
+        @extend .heading-3;
+      }
+
+      h2 {
+        @extend .heading-4;
+      }
+
+      a {
+        @extend .text--semibold;
+        color: $color-blue;
+      }
+
+      strong,
+      b {
+        @extend .text--bold;
+      }
     }
 
     .modal__image {
