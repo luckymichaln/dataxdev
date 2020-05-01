@@ -43,6 +43,10 @@ export default {
     htmlSerializer: '@/plugins/html-serializer',
   },
 
+  router: {
+    middleware: 'noroute',
+  },
+
   /*
   ** Plugins to load before mounting the App
   */
