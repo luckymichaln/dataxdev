@@ -1,0 +1,27 @@
+// For Hauser project use, DESKTOP is default $value.
+// Styles for smaller devices are written using tablet, mobile and mobileXS.
+// Styles for for larger screens are written using desktopXl.
+
+@mixin media($value) {
+  @media(max-width: $value) {
+    @content ;
+  }
+  @if $value == desktopXL {
+    @media (min-width: 1580px) { @content ; }
+  }
+  @if $value == desktop {
+    @media (min-width: 1030px) { @content ; }
+  }
+  @else if $value == tablet {
+    @media (min-width: 960px) { @content ; }
+  }
+  @else if $value == gtMobile {
+    @media (min-width: 768px) { @content ; }
+  }
+  @else if $value == mobile {
+    @media (min-width: 767px) { @content ; }
+  }
+  @else if $value == mobileXS {
+    @media (min-width: 420px) { @content ; }
+  }
+}

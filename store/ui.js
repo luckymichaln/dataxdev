@@ -1,9 +1,10 @@
 const state = () => ({
+  mobileMenuOpened: false,
   modalOpened: {
     contact: false,
     project: false
   },
-  projectName: null
+  projectName: null,
 })
 
 const mutations = {
@@ -12,6 +13,11 @@ const mutations = {
     if (projectName) {
       state.projectName = projectName
     }
+  },
+
+  SET_MOBILE_MENU_OPEN(state, { mobileMenuOpened }) {
+    console.log('object')
+    state.mobileMenuOpened = mobileMenuOpened
   }
 }
 

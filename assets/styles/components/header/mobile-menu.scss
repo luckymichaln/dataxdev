@@ -1,0 +1,32 @@
+.aside-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-white;
+  z-index: 999999;
+
+  .nav-el {
+    padding: 3vw;
+    font-size: 8vw;
+    text-align: center;
+
+    &__submenu {
+      position: relative;
+    }
+  }
+
+  .button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+
+  @include media(tablet) {
+    display: none;
+  }
+}

@@ -22,6 +22,10 @@
         :project="activeModalProject"
       />
     </transition>
+    <asideHeaderNav
+      v-if="headerData && mobileMenuOpened"
+      :navList="headerData.body"
+    />
   </div>
 </template>
 
@@ -33,6 +37,7 @@ import Prismic from "prismic-javascript";
 import PrismicConfig from "~/prismic.config.js";
 import pageHeader from '../components/header/page-header';
 import pageFooter from '../components/footer/page-footer';
+import asideHeaderNav from '~/components/header/aside-header-nav';
 import modalContact from '../components/modals/modal-contact';
 import modalProject from '../components/modals/modal-project';
 
@@ -40,8 +45,8 @@ export default {
   computed: {
     ...mapState('header', ['headerData']),
     ...mapState('footer', ['footerData']),
-    ...mapState('ui', ['modalOpened']),
-    ...mapGetters('pages', ['activeModalProject']),
+    ...mapState('ui', ['modalOpened', 'mobileMenuOpened']),
+    ...mapGetters('pages', ['activeModalProject'])
   },
 
   data() {
@@ -101,7 +106,8 @@ export default {
     pageHeader,
     pageFooter,
     modalContact,
-    modalProject
+    modalProject,
+    asideHeaderNav,
   }
 }
 </script>

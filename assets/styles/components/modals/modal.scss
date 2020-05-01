@@ -225,10 +225,12 @@
       transform: translateX(-50%);
       width: 100%;
       max-width: 1100px;
+      max-height: calc(100vh - 180px);
       min-height: 400px;
       padding: 24px 24px 56px;
       border-radius: 32px;
       background-color: $color-white;
+      overflow-y: scroll;
     }
 
     .badge-list {
