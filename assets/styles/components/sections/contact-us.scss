@@ -1,19 +1,26 @@
 .contact-us {
-  padding-bottom: 100px;
+  padding-bottom: 30px;
 
   &__wrapper {
     display: flex;
+    flex-direction: column;
   }
 
   &__info {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 40px;
   }
 
   &__image {
+    display: flex;
     position: relative;
     left: 60px;
+  }
+
+  .info-heading {
+    white-space: nowrap;
   }
 
   .info-text {
@@ -43,5 +50,17 @@
 
   &:not(.contact-us--framed) {
     background: linear-gradient(180deg, #FFFFFF 44.2%, #F0F7FD 111.94%);
+  }
+
+  @include media(mobile) {
+    padding-bottom: 100px;
+
+    &__wrapper {
+      flex-direction: row;
+    }
+
+    &__info {
+      margin-bottom: 0;
+    }
   }
 }

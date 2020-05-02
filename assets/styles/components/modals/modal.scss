@@ -162,6 +162,8 @@
 
     .subject-picker {
       display: flex;
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
       margin-bottom: 105px;
 
@@ -298,6 +300,12 @@
         height: 100%;
         background-color: rgba(0,0,0, .48);
       }
+    }
+  }
+
+  @include media(mobileMD) {
+    .subject-picker {
+      flex-direction: row;
     }
   }
 }

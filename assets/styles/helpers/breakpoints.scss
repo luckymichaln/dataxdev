@@ -21,6 +21,9 @@
   @else if $value == mobile {
     @media (min-width: 767px) { @content ; }
   }
+  @else if $value == mobileMD {
+    @media (min-width: 590px) { @content ; }
+  }
   @else if $value == mobileXS {
     @media (min-width: 420px) { @content ; }
   }

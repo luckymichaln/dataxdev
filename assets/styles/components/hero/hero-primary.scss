@@ -30,7 +30,13 @@
   }
 
   &__image {
+    display: flex;
     margin-right: -82px;
+
+    img {
+      object-fit: cover;
+      object-position: left;
+    }
   }
 
   &-primary {

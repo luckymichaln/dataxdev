@@ -3,9 +3,12 @@
 
   &__wrapper {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     max-width: 1024px;
-    padding: 0 40px;
+    padding: 0 10px;
     border: 1px solid #F0F4F8;
     border-radius: 32px;
     margin: 0 auto;
@@ -20,15 +23,49 @@
   }
 
   &__info {
-    padding-top: 64px;
-    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
 
     .info-heading {
       margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .info-text {
+      text-align: center;
     }
 
     .button-wrapper {
-      margin-top: 40px;
+      margin: 40px auto;
+    }
+  }
+
+  @include media(mobileXS) {
+    &__wrapper {
+      padding: 0 40px;
+    }
+  }
+
+  @include media(mobile) {
+    &__wrapper {
+      flex-direction: row;
+    }
+
+    &__info {
+      padding-top: 64px;
+      margin-left: 80px;
+
+      .info-heading {
+        text-align: left;
+      }
+
+      .info-text {
+        text-align: left;
+      }
+
+      .button-wrapper {
+        margin: 40px 0 20px;
+      }
     }
   }
 }

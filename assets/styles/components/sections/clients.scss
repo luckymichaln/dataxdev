@@ -1,5 +1,5 @@
 .clients {
-  margin: 120px 0 130px;
+  margin: 70px 0 40px;
 
   &__wrapper {
     display: flex;
@@ -26,5 +26,9 @@
     &__logo {
       width: calc(100% / 5);
     }
+  }
+
+  @include media(mobile) {
+    margin: 120px 0 130px;
   }
 }

@@ -1,6 +1,6 @@
 .our-expertise {
   position: relative;
-  padding-bottom: 160px;
+  padding-bottom: 40px;
 
   &::after {
     content: '';
@@ -26,6 +26,7 @@
     align-items: center;
     width: 100%;
     margin-bottom: 40px;
+    padding: 0 10px;
 
     .col-image {
       width: 100%;
@@ -38,6 +39,10 @@
       }
     }
 
+    .col-text {
+      text-align: center;
+    }
+
     .col-heading {
       margin-bottom: 10px;
       font-size: 20px;
@@ -47,6 +52,8 @@
   }
 
   @include media(mobile) {
+    padding-bottom: 160px;
+
     &__main {
       flex-direction: row;
     }
