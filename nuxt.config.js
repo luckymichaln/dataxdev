@@ -64,6 +64,7 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/prismic',
   ],
+  middleware: 'noroute',
   /*
   ** Axios module configuration
   */
