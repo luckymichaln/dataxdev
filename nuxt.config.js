@@ -1,4 +1,5 @@
 import pkg from './package';
+import Prismic from 'prismic-javascript';
 const PrismicConfig = require('./prismic.config');
 
 export default {
@@ -7,6 +8,8 @@ export default {
   /*
   ** Headers of the page
   */
+  assetsSubDirectory: '/static',
+  assetsPublicPath: '/',
   head: {
     title: pkg.name,
     meta: [
@@ -43,10 +46,6 @@ export default {
     htmlSerializer: '@/plugins/html-serializer',
   },
 
-  router: {
-    middleware: 'noroute',
-  },
-
   /*
   ** Plugins to load before mounting the App
   */
@@ -70,6 +69,19 @@ export default {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+  },
+
+  generate: {
+    async routes() {
+      try {
+        const res = await Prismic.getApi(PrismicConfig.apiEndpoint, { accessToken: PrismicConfig.token })
+        if (res) {
+          return res.query('').then(r => r.results.map(el => el.uid).filter(el => el).map(el => `/services/${el}`))
+        }
+      } catch (err) {
+        return err
+      }
+    }
   },
 
   /*
