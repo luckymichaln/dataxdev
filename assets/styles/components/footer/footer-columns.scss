@@ -1,11 +1,14 @@
 .page-footer__columns {
   position: relative;
   display: flex;
+  flex-direction: column;
   padding-top: 130px;
 
   .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    max-width: 270px;
     font-size: 16px;
     color: $color-text-footer;
 
@@ -18,6 +21,8 @@
     }
 
     .list-el {
+      text-align: center;
+
       &:not(:last-child) {
         margin-bottom: 32px;
       }
@@ -37,21 +42,60 @@
     }
 
     &:not(:last-child) {
-      margin-right: 80px;
+      margin-bottom: 80px;
     }
   }
 
-  &::before {
-    content: url(~assets/static/images/footer/footer_1.svg);
+  &::after {
+    content: '';
     position: absolute;
-    right: -20px;
-    bottom: -25px;
+    right: 0px;
+    top: 60px;
+    width: 225px;
+    height: 195px;
+    display: flex;
+    margin-top: -90px;
+    margin-left: -40px;
+    background: url(~assets/static/images/footer/footer_1.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
-  &::after {
+  &::before {
     content: url(~assets/static/images/footer/footer_2.svg);
     position: absolute;
     right: -20px;
     bottom: -210px;
+  }
+
+  @include media(mobile) {
+    flex-direction: row;
+
+    .column {
+      max-width: 270px;
+      align-items: flex-start;
+
+      .list-el {
+        text-align: left;
+      }
+
+      &:not(:last-child) {
+        margin-right: 80px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include media(tablet) {
+
+    &::after {
+      flex-shrink: 0;
+      position: relative;
+      top: unset;
+      right: -20px;
+      bottom: -25px;
+      width: 305px;
+      height: 295px;
+    }
   }
 }

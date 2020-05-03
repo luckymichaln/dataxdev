@@ -1,12 +1,14 @@
 .hero {
   &__wrapper {
     display: flex;
+    flex-direction: column;
   }
 
   &__text {
     width: 100%;
     max-width: 553px;
     margin-right: 50px;
+    margin-bottom: 60px;
 
     .hero-text {
       max-width: 464px;
@@ -24,18 +26,26 @@
   }
 
   &__actions {
+    .button-wrapper:first-child {
+      margin-right: 10px;
+    }
+
     .button-wrapper:not(:first-child) {
-      margin-left: 6px;
+      margin-top: 20px;
+
+      a {
+        @extend .button--bordered;
+      }
     }
   }
 
   &__image {
     display: flex;
-    margin-right: -82px;
 
     img {
+      width: 100%;
       object-fit: cover;
-      object-position: left;
+      object-position: center;
     }
   }
 
@@ -45,7 +55,42 @@
   }
 
   &-heading {
-    padding-top: 50px;
+    padding-top: 20px;
   }
 
+  @include media(mobileMD) {
+    &__actions {
+      .button-wrapper:not(:first-child) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @include media(tablet) {
+    &__wrapper {
+      flex-direction: row;
+    }
+
+    &__text {
+      margin-bottom: 0;
+    }
+
+    &-heading {
+      padding-top: 50px;
+    }
+
+    &__image {
+      margin-right: -82px;
+
+      img {
+        object-position: left;
+        width: unset;
+      }
+    }
+
+    &__actions .button-wrapper:not(:first-child) a {
+      border: none;
+      background-color: transparent !important;
+    }
+  }
 }

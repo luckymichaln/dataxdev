@@ -1,6 +1,6 @@
 .home-page {
   .hero-primary {
-    padding-top: 187px;
+    padding-top: 117px;
     margin-top: -97px;
     background: linear-gradient(0deg, #FFFFFF 45.93%, #F8FBFF 97.63%);
   }
@@ -15,6 +15,12 @@
     .header-text {
       max-width: 465px;
       margin: 0 auto;
+    }
+  }
+
+  @include media(tablet) {
+    .hero-primary {
+      padding-top: 187px;
     }
   }
 }
