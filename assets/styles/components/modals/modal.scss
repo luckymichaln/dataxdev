@@ -302,18 +302,24 @@
   }
 
   @include media(mobile) {
-    .modal__inner {
-      max-height: calc(100vh - 180px);
+    &--project {
+      .modal__inner {
+        max-height: calc(100vh - 180px);
+      }
     }
   }
 
   @include media(mobileMD) {
-    .modal__inner {
-      top: 120px;
+    &--project {
+      .modal__inner {
+        top: 120px;
+      }
     }
 
-    .subject-picker {
-      flex-direction: row;
+    &--contact {
+      .subject-picker {
+        flex-direction: row;
+      }
     }
   }
 }
