@@ -18,8 +18,10 @@
               :src="project.link_background_image.url"
               :alt="project.link_background_image.alt"
             />
-            <p class="heading-3 main-link-heading">{{ project.link_label }}</p>
-            <badgeList :list="project.link_tags" />
+            <div class="modal-image-text">
+              <p class="heading-3 main-link-heading">{{ project.link_label }}</p>
+              <badgeList :list="project.link_tags" />
+            </div>
           </div>
           <div class="modal__text">
             <prismic-rich-text

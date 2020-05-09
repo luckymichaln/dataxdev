@@ -1,10 +1,12 @@
 .badge-list {
   display: flex;
+  flex-wrap: wrap;
 
   &__el {
     padding: 6px 8px 7px;
     border-radius: 16px;
-    font-size: 14px;
+    margin-top: 10px;
+    font-size: 10px;
     font-weight: 500;
     color: $color-white;
 
@@ -23,6 +25,12 @@
     }
     &--green {
       background-color: #50D77E;
+    }
+  }
+
+  @include media(mobileXS) {
+    &__el {
+      font-size: 14px;
     }
   }
 }

@@ -222,12 +222,12 @@
 
     .modal__inner {
       position: fixed;
-      top: 120px;
+      top: 0;
       left: 50%;
       transform: translateX(-50%);
       width: 100%;
       max-width: 1100px;
-      max-height: calc(100vh - 180px);
+      max-height: 100vh;
       min-height: 400px;
       padding: 24px 24px 56px;
       border-radius: 32px;
@@ -235,17 +235,15 @@
       overflow-y: scroll;
     }
 
-    .badge-list {
+    .main-link-heading {
+      color: $color-white;
+      margin-bottom: 0;
+    }
+
+    .modal-image-text {
       position: absolute;
       bottom: 40px;
       left: 40px;
-    }
-
-    .main-link-heading {
-      position: absolute;
-      bottom: 60px;
-      left: 40px;
-      color: $color-white;
     }
 
     .modal__text {
@@ -303,7 +301,17 @@
     }
   }
 
+  @include media(mobile) {
+    .modal__inner {
+      max-height: calc(100vh - 180px);
+    }
+  }
+
   @include media(mobileMD) {
+    .modal__inner {
+      top: 120px;
+    }
+
     .subject-picker {
       flex-direction: row;
     }
