@@ -42,10 +42,14 @@
 
   &__bricks {
     .bricks-nav {
-      margin-bottom: 40px;
+      margin: 0 -20px 40px 0;
       display: flex;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
 
       .nav-el {
+        flex-shrink: 0;
         margin-right: 10px;
         border-radius: 12px;
         border: 1px solid transparent;
