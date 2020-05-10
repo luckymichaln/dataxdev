@@ -3,15 +3,15 @@
 @import "./vars/fonts";
 @import "./vars/layout";
 
+// Helpers
+@import "./helpers/aspect-ratio";
+@import "./helpers/breakpoints";
+
 // Globals
 @import "./global/reset";
 @import "./global/base";
 @import "./global/router-transitions";
 @import "./global/typography";
-
-// Helpers
-@import "./helpers/aspect-ratio";
-@import "./helpers/breakpoints";
 
 // Pages
 @import "./pages/home-page";

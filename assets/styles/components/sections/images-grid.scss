@@ -1,8 +1,9 @@
 .images-grid {
-  padding: 100px 0 140px;
+  padding: 20px 0 0px;
 
   &__inner {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
   }
 
@@ -16,39 +17,32 @@
       overflow: hidden;
     }
 
+    &:first-of-type {
+      align-self: center;
+      margin-bottom: 40px;
+    }
+
     &:nth-child(2) {
-      top: -100px;
-      left: 60px;
+      margin-bottom: 50px;
     }
 
     &:nth-child(3) {
-      top: 120px;
+      top: -100px;
+      align-self: flex-end;
     }
 
     &:nth-child(4) {
-      left: 40px;
+      top: -150px;
     }
 
     &:nth-child(5) {
-      top: 120px;
-      left: 110px;
-    }
-
-    &:nth-child(6) {
-      top: -65px;
-      left: -40px;
-    }
-
-    &:nth-child(3n + 1) {
-      align-self: center;
-    }
-
-    &:nth-child(4n + 2) {
-      align-self: flex-start;
-    }
-
-    &:nth-child(2n + 3) {
+      top: -120px;
       align-self: flex-end;
+      margin-right: 30px;
+    }
+
+    &:last-child {
+      top: -90px;
     }
 
     &:nth-child(3n + 2)::before {
@@ -61,6 +55,68 @@
       height: 100%;
       border: 1px solid #072A3D;
       border-radius: 32px;
+    }
+  }
+
+  @include media(500px) {
+    &__image-box {
+      &:nth-child(4) {
+        top: -60px;
+      }
+
+      &:nth-child(5) {
+        top: 0;
+      }
+
+      &:last-child {
+        top: 50px;
+      }
+    }
+  }
+
+  @include media(mobileMD) {
+    padding: 100px 0 140px;
+
+    &__inner {
+      flex-direction: row;
+    }
+
+    &__image-box {
+      &:nth-child(2) {
+        top: -100px;
+        left: 60px;
+      }
+
+      &:nth-child(3) {
+        top: 120px;
+      }
+
+      &:nth-child(4) {
+        top: unset;
+        left: 40px;
+      }
+
+      &:nth-child(5) {
+        top: 120px;
+        left: 110px;
+      }
+
+      &:nth-child(6) {
+        top: -65px;
+        left: -40px;
+      }
+
+      &:nth-child(3n + 1) {
+        align-self: center;
+      }
+
+      &:nth-child(4n + 2) {
+        align-self: flex-start;
+      }
+
+      &:nth-child(2n + 3) {
+        align-self: flex-end;
+      }
     }
   }
 }

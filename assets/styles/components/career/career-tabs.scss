@@ -1,12 +1,12 @@
 .career-tabs {
   position: relative;
   z-index: 20;
-  margin-bottom: 128px;
+  margin-bottom: 60px;
 
   .tab {
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    padding: 6px;
     border: 1px solid #F0F4F8;
     border-radius: 24px;
     max-width: 1055px;
@@ -23,29 +23,29 @@
     }
 
     &__arrow {
-      margin: 0 16px 0 auto;
+      margin: 0 6px 0 auto;
       transition: .3s;
     }
 
     &__body {
-      padding: 40px 56px;
+      padding: 20px 26px;
       border-top: 1px solid #F0F4F8;
       margin: 16px -16px 0;
 
       p {
-        margin-bottom: 24px;
+        margin-bottom: 12px;
         font-size: 18px;
         color: $color-text-heading;
       }
 
       ul:not(:last-of-type) {
-        margin-bottom: 56px;
+        margin-bottom: 26px;
       }
 
       li {
         @extend .text;
         position: relative;
-        padding-left: 56px;
+        padding-left: 46px;
 
         &:not(:last-of-type) {
           margin-bottom: 16px;
@@ -55,7 +55,7 @@
           content: url(~assets/static/icons/icon_check.svg);
           position: absolute;
           top: 0;
-          left: 22px;
+          left: 10px;
         }
       }
 
@@ -64,44 +64,48 @@
         width: 100%;
         margin-top: 40px;
       }
+
+      .button {
+        width: 100%;
+      }
     }
 
     &__icon {
       position: relative;
-      width: 120px;
-      height: 120px;
+      width: 60px;
+      height: 60px;
       border: 1px solid #F0F4F8;
       border-radius: 20px;
-      margin-right: 32px;
+      margin-right: 12px;
 
       &::before {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) scale(.8);
       }
     }
 
     .info-level {
       display: flex;
       align-items: center;
+      font-size: 14px;
     }
 
     .info-title {
-      margin-bottom: 10px;
-      font-size: 24px;
+      margin-bottom: 4px;
+      font-size: 18px;
       font-weight: 600;
       color: $color-text-heading;
     }
 
     .level-dots {
       display: flex;
-      margin-right: 8px;
 
       .dot {
         display: block;
-        width: 12px;
-        height: 12px;
+        width: 8px;
+        height: 8px;
         margin-right: 8px;
         border-radius: 50%;
         background-color: #F0F4F8;
@@ -142,7 +146,75 @@
     }
 
     &:not(:last-child) {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
+    }
+  }
+
+  @include media(mobileMD) {
+    margin-bottom: 128px;
+
+    .tab {
+      padding: 16px;
+
+      &__body {
+        padding: 40px 56px;
+
+        p {
+          margin-bottom: 24px;
+        }
+
+        ul:not(:last-of-type) {
+          margin-bottom: 56px;
+        }
+
+        li {
+          padding-left: 56px;
+
+          &::before {
+            left: 22px;
+          }
+        }
+      }
+
+      &__icon {
+        width: 120px;
+        height: 120px;
+        margin-right: 32px;
+
+        &::before {
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      &__arrow {
+        margin: 0 16px 0 auto;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+
+      .button {
+        width: unset;
+      }
+
+      .info-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .level-dots {
+        margin-right: 8px;
+
+        .dot {
+          height: 12px;
+          width: 12px;
+        }
+      }
+
+      .info-level {
+        font-size: 16px;
+      }
     }
   }
 }

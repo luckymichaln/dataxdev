@@ -1,13 +1,15 @@
 <template>
   <div class="text-heading">
-    <prismic-rich-text
-      :field="heading"
-      class="heading-3 text--center"
-    />
-    <prismic-rich-text
-      :field="text"
-      class="text text--center"
-    />
+    <div class="container">
+      <prismic-rich-text
+        :field="heading"
+        class="heading-3 text--center"
+      />
+      <prismic-rich-text
+        :field="text"
+        class="text text--center"
+      />
+    </div>
   </div>
 </template>
 

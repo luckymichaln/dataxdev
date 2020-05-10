@@ -1,7 +1,7 @@
 .career-hero {
   position: relative;
   top: -100px;
-  padding: 160px 0 100px;
+  padding:130px 0 60px;
   margin-bottom: -110px;
   background: url(~assets/static/images/career/career_bg.svg) top center no-repeat;
   background-size: cover;
@@ -15,5 +15,9 @@
       max-width: 670px;
       margin: 0 auto;
     }
+  }
+
+  @include media(tablet) {
+    padding: 160px 0 100px;
   }
 }
