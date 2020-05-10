@@ -1,6 +1,7 @@
 .section-with-text {
   &__inner {
     display: flex;
+    flex-direction: column;
 
     &--text-right {
       flex-direction: row-reverse;
@@ -33,7 +34,6 @@
 
     &.col--text {
       width: 100%;
-      max-width: 455px;
 
       ul li {
         position: relative;
@@ -70,6 +70,11 @@
     }
   }
 
+  .container {
+    position: relative;
+    z-index: 10;
+  }
+
   .col--text__text {
     strong, b {
       color: $color-text-heading;
@@ -83,10 +88,8 @@
 
   .col--images__rows {
     position: relative;
-    top: -30px;
     display: flex;
     flex-direction: column;
-    margin-left: auto;
 
     .image {
       border-radius: 32px;
@@ -95,21 +98,10 @@
 
     .row {
       display: flex;
-
-      &:first-of-type {
-        position: relative;
-        left: 40px;
-
-        .col--text__image:last-of-type {
-          position: relative;
-          top: 20px;
-          align-self: flex-end;
-        }
-      }
+      flex-direction: column;
 
       &:last-of-type .col--text__image:last-of-type {
         position: relative;
-        top: 30px;
 
         &::after {
           content: '';
@@ -124,12 +116,12 @@
         }
       }
 
-      &:not(:last-of-type) {
-        margin-bottom: 40px;
-      }
+      .col--text__image {
+        margin-bottom: 30px;
 
-      .col--text__image:not(:last-of-type) {
-        margin-right: 48px;
+        &:nth-child(2) {
+          align-self: flex-end;
+        }
       }
     }
   }
@@ -177,6 +169,58 @@
   .services-page--red & {
     .col--text__text a {
       color: $color-red;
+    }
+  }
+
+  @include media(500px) {
+    .col--images__rows {
+      .row {
+        display: flex;
+        flex-direction: row;
+
+        &:first-of-type {
+          position: relative;
+
+          .col--text__image:last-of-type {
+            position: relative;
+            top: 20px;
+            align-self: flex-end;
+          }
+        }
+
+        &:last-of-type .col--text__image:last-of-type {
+          position: relative;
+          top: 30px;
+        }
+
+        &:not(:last-of-type) {
+          margin-bottom: 40px;
+        }
+
+        .col--text__image:not(:last-of-type) {
+          margin-right: 48px;
+        }
+      }
+    }
+  }
+
+  @include media(mobile) {
+    .col--images__rows {
+      margin-left: auto;
+    }
+
+    &__inner {
+      flex-direction: row;
+    }
+
+    &__col {
+      &.col--text {
+        max-width: 455px;
+      }
+    }
+
+    .col--images__rows {
+      top: -30px;
     }
   }
 }
