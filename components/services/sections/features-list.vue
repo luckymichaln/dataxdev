@@ -18,14 +18,17 @@
             :key="index"
             class="numbers-el"
           >
-            <span>{{ index + 1 }}</span>
-            <div class="el-bg"/>
+            <div class="numbers-el__inner">
+              <span>{{ index + 1 }}</span>
+              <div class="el-bg"/>
+            </div>
+            <p class="features-list__content">{{ el.feature }}</p>
           </div>
         </div>
-        <prismic-rich-text
+        <!-- <prismic-rich-text
           :field="list"
           class="features-list__content"
-        />
+        /> -->
       </div>
     </div>
   </div>

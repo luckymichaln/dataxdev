@@ -16,7 +16,7 @@
       />
       <featuresList
         v-if="section.slice_type === 'key_features'"
-        :list="section.primary.features_list"
+        :list="section.items"
         :heading="section.primary.section_title"
         :text="section.primary.section_text"
       />

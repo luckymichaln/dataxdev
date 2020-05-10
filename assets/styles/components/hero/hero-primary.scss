@@ -6,12 +6,9 @@
 
   &__text {
     width: 100%;
-    max-width: 553px;
-    margin-right: 50px;
     margin-bottom: 60px;
 
     .hero-text {
-      max-width: 464px;
       margin: 16px 0 40px;
 
       strong, b {
@@ -56,6 +53,17 @@
 
   &-heading {
     padding-top: 20px;
+  }
+
+  @include media(mobile) {
+    &__text {
+      max-width: 553px;
+      margin-right: 50px;
+
+      .hero-text {
+        max-width: 464px;
+      }
+    }
   }
 
   @include media(mobileMD) {
