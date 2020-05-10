@@ -22,10 +22,12 @@
         :project="activeModalProject"
       />
     </transition>
-    <asideHeaderNav
-      v-if="headerData && mobileMenuOpened"
-      :navList="headerData.body"
-    />
+    <transition name="fade" mode="out-in">
+      <asideHeaderNav
+        v-if="headerData && mobileMenuOpened"
+        :navList="headerData.body"
+      />
+    </transition>
   </div>
 </template>
 
