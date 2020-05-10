@@ -3,7 +3,7 @@
 // Styles for for larger screens are written using desktopXl.
 
 @mixin media($value) {
-  @media(max-width: $value) {
+  @media(min-width: $value) {
     @content ;
   }
   @if $value == desktopXL {

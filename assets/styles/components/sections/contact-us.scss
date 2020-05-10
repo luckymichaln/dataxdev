@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 
   &__image {
@@ -30,12 +30,12 @@
 
   &--framed {
     position: relative;
-    top: -160px;
+    top: -210px;
     padding-bottom: 0;
     margin-bottom: -160px;
 
     .contact-us__wrapper {
-      padding: 55px 40px 60px 75px;
+      padding: 25px;
       border: 1px solid #F0F4F8;
       border-radius: 32px;
       background: $color-white;
@@ -43,8 +43,8 @@
     }
 
     .contact-us__image {
-      left: 80px;
-      width: 55%;
+      width: 100%;
+      left: 0;
     }
   }
 
@@ -54,6 +54,18 @@
 
   @include media(mobile) {
     padding-bottom: 100px;
+
+    &--framed {
+      top: -160px;
+
+      .contact-us__wrapper {
+        padding: 55px 40px 60px 75px;
+      }
+
+      .contact-us__image {
+        width: 55%;
+      }
+    }
 
     &__wrapper {
       flex-direction: row;

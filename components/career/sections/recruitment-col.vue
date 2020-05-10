@@ -4,12 +4,14 @@
       <span>{{ index + 1 }}</span>
       <div class="el-bg"/>
     </div>
-    <img
-      :src="col.column_image.url"
-      :alt="col.column_image.alt"
-      class="col-image"
-    />
-    <p class="col-text">{{ col.column_title }}</p>
+    <div class="col-info">
+      <img
+        :src="col.column_image.url"
+        :alt="col.column_image.alt"
+        class="col-image"
+      />
+      <p class="col-text">{{ col.column_title }}</p>
+    </div>
   </div>
 </template>
 
