@@ -11,4 +11,30 @@
   &--yellow {
     color: $color-yellow;
   }
+
+  .features-list {
+    margin: 40px 0 45px;
+  }
+
+  .section-with-text {
+    margin-bottom: 60px;
+  }
+
+  .industries-list {
+    margin-top: 70px;
+  }
+
+  @include media(mobile) {
+    .industries-list {
+      margin-top: 0;
+    }
+
+    .section-with-text {
+      margin-bottom: 0;
+    }
+
+    .features-list {
+      margin: 40px 0 135px;
+    }
+  }
 }

@@ -2,7 +2,7 @@
   <section class="tech-slider">
     <div class="container tech-slider__wrapper">
       <header
-        v-if="heading"
+        v-if="heading && heading.length"
         class="tech-slider__header"
       >
         <prismic-rich-text class="header-heading" :field="heading"/>

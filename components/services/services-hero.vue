@@ -2,36 +2,38 @@
   <section class="services-hero">
     <div class="content">
       <header class="services-hero__header">
-        <div class="header-heading__wrapper">
-          <prismic-rich-text
-            :field="heading"
-            class="header-heading heading-primary"
-          />
-          <div class="header-heading-badge">
-            <img
-              v-if="pageType.toLowerCase().split(' ')[0] === 'ios'"
-              src="~assets/static/icons/services/badge_ios.png"
-              srcset="~assets/static/icons/services/badge_ios.png 1x, ~assets/static/icons/services/badge_ios@2x.png 2x"
-              alt="Technology logotype"
+        <div class="container">
+          <div class="header-heading__wrapper">
+            <prismic-rich-text
+              :field="heading"
+              class="header-heading heading-primary"
             />
-            <img
-              v-if="pageType.toLowerCase().split(' ')[0] === 'android'"
-              src="~assets/static/icons/services/badge_android.png"
-              srcset="~assets/static/icons/services/badge_android.png 1x, ~assets/static/icons/services/badge_android@2x.png 2x"
-              alt="Technology logotype"
-            />
-            <img
-              v-if="pageType.toLowerCase().split(' ')[0] === '.net'"
-              src="~assets/static/icons/services/badge_dotnet.png"
-              srcset="~assets/static/icons/services/badge_dotnet.png 1x, ~assets/static/icons/services/badge_dotnet@2x.png 2x"
-              alt="Technology logotype"
-            />
-            <img
-              v-if="pageType.toLowerCase().split(' ')[0] === 'java'"
-              src="~assets/static/icons/services/badge_java.png"
-              srcset="~assets/static/icons/services/badge_java.png 1x, ~assets/static/icons/services/badge_java@2x.png 2x"
-              alt="Technology logotype"
-            />
+            <div class="header-heading-badge">
+              <img
+                v-if="pageType.toLowerCase().split(' ')[0] === 'ios'"
+                src="~assets/static/icons/services/badge_ios.png"
+                srcset="~assets/static/icons/services/badge_ios.png 1x, ~assets/static/icons/services/badge_ios@2x.png 2x"
+                alt="Technology logotype"
+              />
+              <img
+                v-if="pageType.toLowerCase().split(' ')[0] === 'android'"
+                src="~assets/static/icons/services/badge_android.png"
+                srcset="~assets/static/icons/services/badge_android.png 1x, ~assets/static/icons/services/badge_android@2x.png 2x"
+                alt="Technology logotype"
+              />
+              <img
+                v-if="pageType.toLowerCase().split(' ')[0] === '.net'"
+                src="~assets/static/icons/services/badge_dotnet.png"
+                srcset="~assets/static/icons/services/badge_dotnet.png 1x, ~assets/static/icons/services/badge_dotnet@2x.png 2x"
+                alt="Technology logotype"
+              />
+              <img
+                v-if="pageType.toLowerCase().split(' ')[0] === 'java'"
+                src="~assets/static/icons/services/badge_java.png"
+                srcset="~assets/static/icons/services/badge_java.png 1x, ~assets/static/icons/services/badge_java@2x.png 2x"
+                alt="Technology logotype"
+              />
+            </div>
           </div>
         </div>
         <prismic-rich-text

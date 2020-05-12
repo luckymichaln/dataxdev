@@ -6,8 +6,11 @@
   @media(min-width: $value) {
     @content ;
   }
+  @if $value == hiRes {
+    @media (min-width: 1660px) { @content ; }
+  }
   @if $value == desktopXL {
-    @media (min-width: 1580px) { @content ; }
+    @media (min-width: 1400px) { @content ; }
   }
   @if $value == desktop {
     @media (min-width: 1030px) { @content ; }
