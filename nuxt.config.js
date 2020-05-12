@@ -21,10 +21,6 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
       { rel: 'stylesheet', href: 'href="https://fonts.googleapis.com/css?family=Lato:500,700,900|Roboto&display=swap' }
     ],
-    script: [
-      // { innerHTML: '{ window.prismic = { endpoint: "' + PrismicConfig.apiEndpoint + '"} }' },
-      // { src: '//static.cdn.prismic.io/prismic.min.js' }
-    ],
     __dangerouslyDisableSanitizers: ['script'],
   },
 
@@ -49,11 +45,8 @@ export default {
   /*
   ** Plugins to load before mounting the App
   */
-  // plugins: [
-  //   '~/plugins/link-resolver.js',
-  //   '~/plugins/html-serializer.js',
-  //   '~/plugins/prismic-vue.js',
-  // ],
+  plugins: [
+  ],
 
   /*
   ** Nuxt.js modules
