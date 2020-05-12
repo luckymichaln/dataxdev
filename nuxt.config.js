@@ -3,7 +3,7 @@ import Prismic from 'prismic-javascript';
 const PrismicConfig = require('./prismic.config');
 
 export default {
-  mode: 'spa',
+  mode: 'universal',
 
   /*
   ** Headers of the page
@@ -15,7 +15,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: "Let's create something together! You have an idea. We make it happen. Web and mobile app development for your business." }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
