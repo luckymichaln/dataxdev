@@ -1,4 +1,3 @@
-import pkg from './package';
 import Prismic from 'prismic-javascript';
 const PrismicConfig = require('./prismic.config');
 
