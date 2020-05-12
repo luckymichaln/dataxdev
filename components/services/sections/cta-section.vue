@@ -9,7 +9,10 @@
         :field="text"
         class="cta-section__text text"
       />
-      <x-button :button="button" />
+      <x-button
+        :button="button"
+        @click.native="openModal(true)"
+      />
     </div>
     <div class="cta-section__image">
       <img
@@ -37,6 +40,12 @@ export default {
       type: Object,
       default: () => {}
     }
+  },
+
+  methods: {
+    openModal(open) {
+      this.$store.commit('ui/SET_MODAL_OPEN', { modalOpened: open, name: 'contact' });
+    },
   },
 
   components: {
