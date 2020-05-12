@@ -33,6 +33,15 @@ export default {
     }
   },
 
+  head () {
+    return {
+      title: 'Data X Dev - Projects',
+      link: [
+        { rel: 'cannonical', href: '/projects' }
+      ]
+    }
+  },
+
   components: {
     projectsGrid
   }
