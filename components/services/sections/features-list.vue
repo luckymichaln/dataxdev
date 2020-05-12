@@ -25,10 +25,6 @@
             <p class="features-list__content">{{ el.feature }}</p>
           </div>
         </div>
-        <!-- <prismic-rich-text
-          :field="list"
-          class="features-list__content"
-        /> -->
       </div>
     </div>
   </div>

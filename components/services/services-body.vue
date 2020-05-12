@@ -7,7 +7,7 @@
     >
       <featuresList
         v-if="section.slice_type === 'features_list'"
-        :list="section.primary.features_list"
+        :list="section.items"
       />
       <sectionWithText
         v-if="section.slice_type === 'section_with_text'"
