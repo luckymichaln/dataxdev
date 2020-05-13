@@ -9,6 +9,10 @@ body {
     text-rendering: optimizeLegibility
   }
 
+  &.frozen {
+    overflow: hidden;
+  }
+
   img {
     max-width: 100%;
   }
@@ -27,6 +31,12 @@ body {
 input,
 textarea {
   font-family: $font-regular;
+}
+
+#__nuxt {
+  &.frozen {
+    overflow: hidden;
+  }
 }
 
 .mighty-wrapper {

@@ -204,6 +204,13 @@ export default {
     }
   },
 
+  mounted() {
+    setTimeout(() => {
+      document.getElementsByTagName('body')[0].classList.add('frozen');
+      document.getElementById('__nuxt').classList.add('frozen');
+    }, 300);
+  },
+
   methods: {
     openModal(open) {
       this.$store.commit('ui/SET_MODAL_OPEN', { modalOpened: open, name: 'contact' });
@@ -233,6 +240,11 @@ export default {
       this.fileName = null;
       this.form.file = null;
     }
+  },
+
+  beforeDestroy() {
+    document.getElementsByTagName('body')[0].classList.remove('frozen');
+    document.getElementById('__nuxt').classList.remove('frozen');
   },
 
   components: {

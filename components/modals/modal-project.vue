@@ -36,7 +36,6 @@
 </template>
 
 <script>
-// import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import { directive as onClickaway } from 'vue-clickaway';
 import xButton from '~/components/x-button';
 import badgeList from '~/components/shared/badge-list';
@@ -60,9 +59,10 @@ export default {
   },
 
   mounted() {
-    console.log(this.project)
-    this.scrollTargetElement = document.querySelectorAll('.modal--project')[0];
-    console.log(this.scrollTargetElement, 'this.scrollTargetElement')
+    setTimeout(() => {
+      document.getElementsByTagName('body')[0].classList.add('frozen');
+      document.getElementById('__nuxt').classList.add('frozen');
+    }, 300);
   },
 
   methods: {
@@ -74,6 +74,11 @@ export default {
     away() {
       this.openModal(false);
     }
+  },
+
+  beforeDestroy() {
+    document.getElementsByTagName('body')[0].classList.remove('frozen');
+    document.getElementById('__nuxt').classList.remove('frozen');
   },
 
   components: {
