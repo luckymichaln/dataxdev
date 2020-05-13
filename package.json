@@ -14,7 +14,6 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/prismic": "^1.1.0",
     "@nuxtjs/pwa": "^2.6.0",
-    "body-scroll-lock": "^3.0.1",
     "cross-env": "^5.2.0",
     "node-sass": "^4.13.1",
     "nuxt": "^2.4.0",
