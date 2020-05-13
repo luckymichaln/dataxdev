@@ -23,7 +23,7 @@
       />
     </transition>
     <transition name="fade" mode="out-in">
-      <asideHeaderNav
+      <mobileMenu
         v-if="headerData && mobileMenuOpened"
         :navList="headerData.body"
       />
@@ -39,7 +39,7 @@ import Prismic from "prismic-javascript";
 import PrismicConfig from "~/prismic.config.js";
 import pageHeader from '../components/header/page-header';
 import pageFooter from '../components/footer/page-footer';
-import asideHeaderNav from '~/components/header/aside-header-nav';
+import mobileMenu from '~/components/header/mobile-menu';
 import modalContact from '../components/modals/modal-contact';
 import modalProject from '../components/modals/modal-project';
 
@@ -109,7 +109,7 @@ export default {
     pageFooter,
     modalContact,
     modalProject,
-    asideHeaderNav,
+    mobileMenu,
   }
 }
 </script>
