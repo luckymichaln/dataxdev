@@ -60,8 +60,10 @@ export default {
 
   mounted() {
     setTimeout(() => {
+      document.getElementsByTagName('html')[0].classList.add('frozen');
       document.getElementsByTagName('body')[0].classList.add('frozen');
       document.getElementById('__nuxt').classList.add('frozen');
+      document.getElementById('__layout').classList.add('frozen');
     }, 300);
   },
 
@@ -77,8 +79,10 @@ export default {
   },
 
   beforeDestroy() {
+    document.getElementsByTagName('html')[0].classList.remove('frozen');
     document.getElementsByTagName('body')[0].classList.remove('frozen');
     document.getElementById('__nuxt').classList.remove('frozen');
+    document.getElementById('__layout').classList.remove('frozen');
   },
 
   components: {
