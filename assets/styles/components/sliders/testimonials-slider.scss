@@ -62,7 +62,7 @@
 
   .swiper-button {
     position: absolute;
-    top: 60px;
+    bottom: -20px;
     left: 80px;
     display: flex;
     align-items: center;
@@ -116,8 +116,9 @@
   @include media(661px) {
     .swiper-button {
       top: 0;
-      left: unset;
       right: 0;
+      bottom: unset;
+      left: unset;
 
       &-prev {
         right: 80px;
