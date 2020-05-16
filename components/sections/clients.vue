@@ -7,9 +7,9 @@
             :key="index"
           >
             <img
-              :src="logo.client_logo.url"
-              :srcset="`${logo.client_logo.url} 1x, ${logo.client_logo.url} 2x`"
-              :alt="logo.client_logo.alt"
+              :src="logo.logo.url"
+              :srcset="`${logo.logo.url} 1x, ${logo.logo.url} 2x`"
+              :alt="logo.logo.alt"
             />
           </div>
         </div>

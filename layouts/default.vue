@@ -32,8 +32,6 @@
 </template>
 
 <script>
-// import { directive as bSL } from 'v-body-scroll-lock';
-// import { bodyScrollLock } from 'v-body-scroll-lock';
 import { mapState, mapGetters } from 'vuex';
 import Prismic from "prismic-javascript";
 import PrismicConfig from "~/prismic.config.js";
@@ -62,10 +60,6 @@ export default {
   async created () {
     await this.$store.dispatch('header/GET_HEADER_DATA');
     await this.$store.dispatch('footer/GET_FOOTER_DATA');
-
-    if (!this.projects) {
-      await this.$store.dispatch('pages/GET_SINGLE_PAGE_DATA', { pageType: 'projects_page' })
-    }
   },
 
   mounted() {

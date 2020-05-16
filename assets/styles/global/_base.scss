@@ -33,6 +33,15 @@ textarea {
   font-family: $font-regular;
 }
 
+button {
+  cursor: pointer;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
 #__nuxt {
   &.frozen {
     overflow: hidden;

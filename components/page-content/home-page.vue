@@ -36,9 +36,12 @@
       :heading="pageData.numbers_heading"
       :bricks="pageData.numbers_brick"
     />
-    <!-- <testimonialsSlider
+    <testimonialsSlider
       :heading="pageData.testimonials_heading"
-    /> -->
+      :slides="pageData.slide"
+      :options="sliderOptions"
+      :swiperKey="sliderKey"
+    />
     <clients
       :logos="pageData.clients"
     />
@@ -62,10 +65,65 @@ import clients from '~/components/sections/clients';
 import contactUs from '~/components/sections/contact-us';
 
 export default {
+  data() {
+    return {
+      sliderOptions: {
+        slidesPerView: 2.5,
+        spaceBetween: 50,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      },
+
+      sliderKey: null
+    }
+  },
+
   props: {
     pageData: {
       type: Object,
       default: () => {},
+    }
+  },
+
+  mounted() {
+    window.addEventListener("resize", this.myEventHandler);
+    this.setSlidersPerView({ width: window.innerWidth })
+  },
+
+  beforeDestroy() {
+    window.removeEventListener("resize", this.myEventHandler);
+  },
+
+  methods: {
+    setSlidersPerView({ width }) {
+      if (width <= 660) {
+        if (this.sliderKey != 'mobile') {
+          this.sliderKey = 'mobile';
+          this.sliderOptions.slidesPerView = 1.25;
+          this.sliderOptions.spaceBetween = 20,
+          console.log(this.sliderKey, this.sliderOptions.slidesPerView)
+        }
+      } else if (width > 590 && width < 960) {
+        if (this.sliderKey != 'tablet') {
+          this.sliderKey = 'tablet';
+          this.sliderOptions.slidesPerView = 2;
+          this.sliderOptions.spaceBetween = 35,
+          console.log(this.sliderKey, this.sliderOptions.slidesPerView)
+        }
+      } else if (width > 960) {
+        if (this.sliderKey != 'destkop') {
+          this.sliderKey = 'destkop';
+          this.sliderOptions.slidesPerView = 3;
+          this.sliderOptions.spaceBetween = 50,
+          console.log(this.sliderKey, this.sliderOptions.slidesPerView)
+        }
+      }
+    },
+
+    myEventHandler(e, startVal) {
+      this.setSlidersPerView({ width: startVal ? window.innerWidth : e.target.innerWidth })
     }
   },
 

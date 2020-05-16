@@ -45,6 +45,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: './plugins/vue-awesome-swiper.js', ssr: false }
   ],
 
   /*

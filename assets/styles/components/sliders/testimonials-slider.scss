@@ -1,0 +1,127 @@
+.testimonials-slider {
+  margin: 160px 0 120px;
+
+  &__header {
+    position: relative;
+    padding-bottom: 50px;
+  }
+
+  .carousel-wrapper {
+    position: relative;
+    margin-top: 55px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: calc(-100vw);
+      z-index: 10;
+      height: 120%;
+      width: 100vw;
+      background: $color-white;
+    }
+  }
+
+  .avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+  }
+
+  .slide-raiting {
+    display: flex;
+    margin-bottom: 16px;
+  }
+
+  .raiting-star {
+    margin-right: 5px;
+  }
+
+  .slide-footer {
+    display: flex;
+    margin-top: auto;
+
+    .footer-info {
+      display: flex;
+      flex-direction: column;
+      margin-left: 18px;
+      overflow: hidden;
+
+      span {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  .slide-text {
+    max-height: 110px;
+    overflow: hidden;
+  }
+
+  .swiper-button {
+    position: absolute;
+    top: 60px;
+    left: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 24px;
+    border: 1px solid #F0F4F8;
+    background: $color-white;
+    box-shadow: 0px 8px 16px rgba(33, 78, 146, 0.08), 0px 2px 5px rgba(33, 78, 146, 0.1);
+    transition: opacity .3s;
+
+    &-prev {
+      left: 0;
+
+      img {
+        transform: rotate(-180deg);
+      }
+    }
+
+    &-disabled {
+      opacity: .32;
+    }
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: $container-width;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    height: 296px;
+    padding: 15px;
+    border-radius: 32px;
+    flex-shrink: 0;
+    line-height: 26px;
+    color: $color-text-heading;
+    background-color: #F0F6FC;
+    cursor: pointer;
+  }
+
+  @include media(mobileXS) {
+    .swiper-slide {
+      padding: 32px;
+    }
+  }
+
+  @include media(661px) {
+    .swiper-button {
+      top: 0;
+      left: unset;
+      right: 0;
+
+      &-prev {
+        right: 80px;
+      }
+    }
+  }
+}
