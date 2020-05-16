@@ -84,24 +84,7 @@ export default {
         default:
           return '#F0F7FD'
       }
-    },
-
-    // techImgSrc(pageType) {
-    //   console.log(pageType.toLowerCase().split(' ')[0])
-    //   // const type = ;
-    //   switch (pageType.toLowerCase()) {
-    //     case 'ios':
-    //       return '~assets/static/icons/services/badge_ios@2x.png'
-    //     case '.net':
-    //       return '~/assets/static/icons/services/badge_dotnet@2x.png'
-    //     case 'java':
-    //       return '~/assets/static/icons/services/badge_java@2x.png'
-    //     case 'android':
-    //       return '~/assets/static/icons/services/badge_android@2x.png'
-    //     default:
-    //       return '~/assets/static/icons/services/badge_ios@2x.png'
-    //   }
-    // }
+    }
   }
 }
 </script>

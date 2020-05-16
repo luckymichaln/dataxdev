@@ -100,24 +100,21 @@ export default {
     setSlidersPerView({ width }) {
       if (width <= 660) {
         if (this.sliderKey != 'mobile') {
-          this.sliderKey = 'mobile';
-          this.sliderOptions.slidesPerView = 1.25;
-          this.sliderOptions.spaceBetween = 20,
-          console.log(this.sliderKey, this.sliderOptions.slidesPerView)
+          this.sliderKey = 'mobile'
+          this.sliderOptions.slidesPerView = 1.25
+          this.sliderOptions.spaceBetween = 20
         }
       } else if (width > 590 && width < 960) {
         if (this.sliderKey != 'tablet') {
-          this.sliderKey = 'tablet';
-          this.sliderOptions.slidesPerView = 2;
-          this.sliderOptions.spaceBetween = 35,
-          console.log(this.sliderKey, this.sliderOptions.slidesPerView)
+          this.sliderKey = 'tablet'
+          this.sliderOptions.slidesPerView = 2
+          this.sliderOptions.spaceBetween = 35
         }
       } else if (width > 960) {
         if (this.sliderKey != 'destkop') {
-          this.sliderKey = 'destkop';
-          this.sliderOptions.slidesPerView = 3;
-          this.sliderOptions.spaceBetween = 50,
-          console.log(this.sliderKey, this.sliderOptions.slidesPerView)
+          this.sliderKey = 'destkop'
+          this.sliderOptions.slidesPerView = 3
+          this.sliderOptions.spaceBetween = 50
         }
       }
     },

@@ -1,4 +1,4 @@
- class="slide-raiting"<template>
+ <template>
   <section class="testimonials-slider">
     <div class="container">
       <header class="testimonials-slider__header">
@@ -82,14 +82,6 @@ export default {
     },
 
     swiperKey: String
-  },
-
-  mounted () {
-    console.log(this.slides)
   }
 }
 </script>
-
-<style>
-
-</style>

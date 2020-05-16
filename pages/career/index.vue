@@ -17,16 +17,8 @@ export default {
     ...mapGetters('pages', ['careerPageData']),
   },
 
-  mounted() {
-    console.log(this.careerPageData, 'careerPageData')
-  },
-
   components: {
     careerPage
   }
 }
 </script>
-
-<style>
-
-</style>

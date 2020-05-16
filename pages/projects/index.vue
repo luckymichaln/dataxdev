@@ -17,16 +17,8 @@ export default {
     ...mapGetters('pages', ['projectsPageData']),
   },
 
-  mounted() {
-    console.log(this.projectsPageData, 'projectsPageData')
-  },
-
   components: {
     projectPage
   }
 }
 </script>
-
-<style>
-
-</style>

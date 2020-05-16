@@ -4,7 +4,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import homePage from '~/pages/home-page';
+import homePage from '~/components/page-content/home-page';
 
 export default {
   async fetch ({ store }) {
@@ -15,10 +15,6 @@ export default {
 
   computed: {
     ...mapGetters('pages', ['homePageData']),
-  },
-
-  mounted() {
-    console.log(this.homePageData, 'homePageData')
   },
 
   components: {

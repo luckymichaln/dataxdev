@@ -57,10 +57,6 @@ export default {
     }
   },
 
-  mounted() {
-    console.log(this.data, 'career body')
-  },
-
   components: {
     textHeading,
     imagesGrid,
@@ -70,7 +66,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>

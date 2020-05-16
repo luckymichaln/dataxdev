@@ -1,7 +1,3 @@
-// For Hauser project use, DESKTOP is default $value.
-// Styles for smaller devices are written using tablet, mobile and mobileXS.
-// Styles for for larger screens are written using desktopXl.
-
 @mixin media($value) {
   @media(min-width: $value) {
     @content ;

@@ -20,16 +20,8 @@ export default {
     ...mapGetters('pages', ['servicesPageData']),
   },
 
-  mounted() {
-    console.log(this.servicesPageData, 'servicesPageData')
-  },
-
   components: {
     servicesPage
   }
 }
 </script>
-
-<style>
-
-</style>

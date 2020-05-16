@@ -96,7 +96,6 @@ export default {
       let row = [];
 
       this.images.map((img, i) => {
-          console.log(i)
           row.push(img);
 
         if (i > 0 && !!(i % 2)) {
@@ -111,7 +110,6 @@ export default {
 
   methods: {
     innerClass(textPosition) {
-      console.log(textPosition)
       return {
         'section-with-text__inner': true,
         'section-with-text__inner--text-left': textPosition.toLowerCase() === 'left',
@@ -136,7 +134,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>
