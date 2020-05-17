@@ -3,7 +3,23 @@
 
   &__header {
     position: relative;
-    padding-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+
+    .header-heading {
+      margin: 0 20px 20px 0;
+    }
+  }
+
+  &__nav {
+    display: flex;
+
+    .swiper-button-prev {
+      margin-right: 24px;
+    }
   }
 
   .carousel-wrapper {
@@ -61,9 +77,9 @@
   }
 
   .swiper-button {
-    position: absolute;
-    bottom: -20px;
-    left: 80px;
+    // position: absolute;
+    // bottom: -20px;
+    // left: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,7 +92,7 @@
     transition: opacity .3s;
 
     &-prev {
-      left: 0;
+      // left: 0;
 
       img {
         transform: rotate(-180deg);
@@ -118,15 +134,15 @@
   }
 
   @include media(661px) {
-    .swiper-button {
-      top: 0;
-      right: 0;
-      bottom: unset;
-      left: unset;
+    // .swiper-button {
+    //   top: 0;
+    //   right: 0;
+    //   bottom: unset;
+    //   left: unset;
 
-      &-prev {
-        right: 80px;
-      }
-    }
+    //   &-prev {
+    //     right: 80px;
+    //   }
+    // }
   }
 }

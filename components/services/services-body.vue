@@ -19,9 +19,10 @@
         :heading="section.primary.section_title"
         :cards="section.items"
       />
-      <partners
+      <testimonialsSlider
         v-if="section.slice_type === 'partners_slider'"
-        :heading="section.primary.section_title"
+        :slides="section.items"
+        :heading="section.primary.testimonials_heading"
       />
       <ctaSection
         v-if="section.slice_type === 'cta_section'"
@@ -47,9 +48,9 @@
 import featuresList from '~/components/services/sections/features-list';
 import sectionWithText from '~/components/services/sections/section-with-text';
 import industriesList from '~/components/services/sections/industries-list';
-import partners from '~/components/services/sections/partners';
 import ctaSection from '~/components/services/sections/cta-section';
 import somethingElse from '~/components/services/sections/something-else';
+import testimonialsSlider from '~/components/sliders/testimonials-slider';
 
 export default {
   props: {
@@ -59,13 +60,17 @@ export default {
     }
   },
 
+  mounted() {
+    console.log(this.data)
+  },
+
   components: {
     featuresList,
     sectionWithText,
     industriesList,
-    partners,
     ctaSection,
-    somethingElse
+    somethingElse,
+    testimonialsSlider,
   }
 }
 </script>
