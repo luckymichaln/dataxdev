@@ -1,5 +1,6 @@
 import Prismic from 'prismic-javascript';
 const PrismicConfig = require('./prismic.config');
+require('dotenv').config();
 
 export default {
   mode: 'universal',
@@ -63,6 +64,12 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/prismic',
   ],
+  buildModules: [
+    '@nuxtjs/dotenv'
+  ],
+  env: {
+    baseUrl: process.env.PRODUCTION_DOMAIN
+  },
   middleware: 'noroute',
   /*
   ** Axios module configuration

@@ -37,7 +37,7 @@ export default {
     return {
       title: 'Data X Dev - Projects',
       link: [
-        { rel: 'cannonical', href: '/projects' }
+        { rel: 'cannonical', href: `${process.env.TEST_DOMAIN}/projects }
       ]
     }
   },
