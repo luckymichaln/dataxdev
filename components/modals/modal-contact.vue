@@ -22,7 +22,7 @@
           <form
             data-netlify="true"
             name="modal-contact"
-            method="POST"
+            @submit.prevent="handleSubmit"
           >
             <div class="subject-picker">
               <label
@@ -245,6 +245,26 @@ export default {
     removeFile() {
       this.fileName = null;
       this.form.file = null;
+    },
+
+    encode (data) {
+      return Object.keys(data)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join("&");
+    },
+    handleSubmit () {
+      const axiosConfig = {
+        header: { "Content-Type": "application/x-www-form-urlencoded" }
+      };
+      axios.post(
+        "/",
+        this.encode({
+          ...this.form
+        }),
+        axiosConfig
+      );
     }
   },
 
