@@ -21,6 +21,7 @@
           <h2 class="heading-3 text--center">Select device of your project?</h2>
           <form
             data-netlify="true"
+            netlify-honeypot="bot-field"
             name="modal-contact"
             @submit.prevent="handleSubmit"
           >
@@ -254,9 +255,10 @@ export default {
         )
         .join("&");
     },
+
     handleSubmit () {
       const axiosConfig = {
-        header: { "Content-Type": "application/x-www-form-urlencoded" }
+        header: { "Content-Type": "multipart/form-data" }
       };
       this.$axios.post(
         "/",
