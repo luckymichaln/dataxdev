@@ -258,7 +258,7 @@ export default {
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" }
       };
-      axios.post(
+      this.$axios.post(
         "/",
         this.encode({
           ...this.form
