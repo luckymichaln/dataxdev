@@ -143,6 +143,7 @@
                 placeholder="What idea you have and what you expect..."
                 v-model="form.message"
               ></textarea>
+              <input type="hidden" name="bot-field"/>
             </fieldset>
             <fieldset>
               <div class="field-inline">
@@ -188,6 +189,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import xButton from '~/components/x-button';
 
 export default {
@@ -260,7 +262,7 @@ export default {
       const axiosConfig = {
         header: { "Content-Type": "multipart/form-data" }
       };
-      this.$axios.post(
+      axios.post(
         "/",
         this.encode({
           ...this.form
