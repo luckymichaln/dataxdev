@@ -19,7 +19,11 @@
         </header>
         <section class="modal__form">
           <h2 class="heading-3 text--center">Select device of your project?</h2>
-          <form>
+          <form
+            data-netlify="true"
+            name="modal-contact"
+            method="POST"
+          >
             <div class="subject-picker">
               <label
                 class="label"
