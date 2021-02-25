@@ -12,16 +12,18 @@
               :src="pageData.hero_image.url"
               :alt="pageData.hero_image.alt"
             />
+          </div>
+          <div class="header-text">
+            <prismic-rich-text
+              v-if="pageData"
+              :field="pageData.hero_heading"
+              class="header-heading"
+            />
             <badgeList
               v-if="pageData.project_tags"
               :list="pageData.project_tags"
             />
           </div>
-          <prismic-rich-text
-            v-if="pageData"
-            :field="pageData.hero_heading"
-            class="header-heading"
-          />
         </header>
         <main class="project-page-single__main">
           <prismic-rich-text

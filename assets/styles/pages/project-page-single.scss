@@ -1,4 +1,6 @@
 .project-page-single {
+  margin-bottom: 100px;
+
   &__header {
     position: relative;
     margin-bottom: 60px;
@@ -28,22 +30,29 @@
       }
     }
 
-    .header-heading {
-      @extend .heading-3;
-
+    .header-text {
       position: absolute;
-      bottom: 35px;
-      left: 20px;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%;
+      width: 100%;
+      padding: 10px;
+
+      @include media(mobile) {
+        padding: 20px 30px;
+      }
+    }
+
+    .header-heading {
+      margin: 0;
+      @extend .heading-3;
 
       h1 {
         color: $color-white;
       }
-    }
-
-    .badge-list {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
     }
   }
 
