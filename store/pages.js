@@ -43,6 +43,7 @@ const getters = {
   projectsPageData: state => state.pageData.projects_page ? state.pageData.projects_page : null,
   aboutPageData: state => state.pageData.about_us ? state.pageData.about_us : null,
   servicesPageData: state => state.pageData.service_page ? state.pageData.service_page : null,
+  projectSinglePageData: state => state.pageData.projects_single ? state.pageData.projects_single : null,
   activeModalProject: state => {
     const pName = window.$nuxt.$store.state.ui.projectName;
     if (!pName || !state.pageData.projects_page) {

@@ -34,12 +34,11 @@
             <div
               class="main-link"
               v-if="link"
-              v-for="link in filteredList"
+              v-for="(link, i) in filteredList"
               :key="link.link_label"
             >
               <div
-                :is="'nuxt-link'"
-                :to="{ name: 'projects', query: { name: `${friendlyLink(link.link_label)}` } }"
+                v-if="i === filteredList.length - 1"
                 class="main-link__inner"
                 :style="{ backgroundImage: `url(${link.link_background_image.url})` }"
                 @click="openModal(true)"
@@ -50,6 +49,18 @@
                   {{ link.link_text }}
                 </p>
               </div>
+              <nuxt-link
+                v-else
+                :to="`projects/${friendlyLink(link.link_label)}`"
+                class="main-link__inner"
+                :style="{ backgroundImage: `url(${link.link_background_image.url})` }"
+              >
+                <badgeList :list="link.link_tags" />
+                <p class="heading-3 main-link-heading">{{ link.link_label }}</p>
+                <p class="main-link-text">
+                  {{ link.link_text }}
+                </p>
+              </nuxt-link>
             </div>
           </transition-group>
           <nuxt-link
@@ -110,14 +121,12 @@ export default {
       projectsNavIndex: 0,
       projectsList: null,
       filteredList: null,
-      isProjectPage: false,
     }
   },
 
   created() {
     this.projectsList = this.bricks;
     this.filteredList = this.projectsList;
-    this.isProjectPage = this.$route.name === 'projects';
   },
 
   methods: {
@@ -154,10 +163,8 @@ export default {
       });
     },
 
-    openModal(open, projectName) {
-      if (this.isProjectPage) {
-        this.$store.commit('ui/SET_MODAL_OPEN', { modalOpened: open, name: 'project', projectName });
-      }
+    openModal(open) {
+      this.$store.commit('ui/SET_MODAL_OPEN', { modalOpened: open, name: 'contact' });
     }
   },
 

@@ -212,7 +212,7 @@
   }
 
   &--project {
-    background-color: rgba(10, 42, 60, 0.24);
+    background-color: $color-modal-image-overlay;
 
     .nav-btn--close {
       position: absolute;

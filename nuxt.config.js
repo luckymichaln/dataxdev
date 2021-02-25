@@ -83,7 +83,17 @@ export default {
       try {
         const res = await Prismic.getApi(PrismicConfig.apiEndpoint, { accessToken: PrismicConfig.token })
         if (res) {
-          return res.query('').then(r => r.results.map(el => el.uid).filter(el => el).map(el => `/services/${el}`))
+          return res.query('')
+            .then(r => r.results.map(el => {
+              if (el.uid) {
+                return {
+                  uid: el.uid,
+                  type: el.type
+                }
+              }
+            })
+              .filter(el => el)
+              .map(el => el.type === 'service_page' ? `/services/${el.uid}` : `/projects/${el.uid}`))
         }
       } catch (err) {
         return err
